@@ -1,0 +1,112 @@
+itemGroup.SlimeCraftTab=スライムクラフト
+
+item.Slime Sword.name=スライムの剣
+item.SlimeIron Sword.name=鉄スライムの剣
+item.SlimeDiamond Sword.name=ダイヤスライムの剣
+item.SlimeDiamond Sword X.name=強化ダイヤスライムの剣
+item.Slime Diamond.name=ダイヤスライム
+item.Slime Iron Ingot.name=鉄スライム
+item.Slime Cookie.name=スライムクッキー
+item.Glass Stick.name=ガラス棒
+
+
+item.Slime Pickaxe.name=スライムのツルハシ
+item.SlimeIron Pickaxe.name=鉄スライムのツルハシ
+item.SlimeDiamond Pickaxe.name=ダイヤスライムのツルハシ
+item.SlimeDiamond Pickaxe X.name=強化ダイヤスライムのツルハシ
+
+item.Slime Axe.name=スライムのオノ
+item.SlimeDiamond Axe X.name=強化ダイヤスライムのオノ
+item.SlimeDiamond Axe.name=ダイヤスライムのオノ
+item.SlimeIron Axe.name=鉄スライムのオノ
+
+item.Slime Hoe.name=スライムのクワ
+item.SlimeDiamond Hoe X.name=強化ダイヤスライムのクワ
+item.SlimeDiamond Hoe.name=ダイヤスライムのクワ
+item.SlimeIron Hoe.name=鉄スライムのクワ
+
+item.Slime Shovel.name=スライムのシャベル
+item.SlimeDiamond Shovel X.name=強化ダイヤスライムのシャベル
+item.SlimeDiamond Shovel.name=ダイヤスライムのシャベル
+item.SlimeIron Shovel.name=鉄スライムのシャベル
+
+item.Slime MultiTool.name=スライムマルチツール
+item.Slime MultiTool(Fortune).name=スライムマルチツール(幸運)
+
+tile.SlimeIron Block.name=鉄スライムブロック
+tile.SlimeDiamond Block.name=ダイヤスライムブロック
+tile.SlimeTrophy.name=スライムトロフィー
+tile.SlimeLamp.name=スライムランプ
+tile.SlimeLamp_light.name=光っているスライムランプ
+
+item.Potion Card.name=ポーションカード
+item.Speed Card.name=移動速度上昇カード
+item.Food Card.name=食べ物カード
+item.Regeneration Card.name=再生能力カード
+item.Hunger Card.name=空腹カード
+item.Fire Resistance Card.name=火炎耐性カード
+item.Resistance Card.name=耐性カード
+item.Night Vision Card.name=暗視カード
+item.Invisibility Card.name=透明カード
+item.Jump Boost Card.name=跳躍力上昇カード
+item.Glowing Card.name=発光カード
+
+item.SlimeMakeKit.name=スライム自作キット
+item.SlimeMake Material 2.name=スライムの材料 2
+item.SlimeMake Material 1.name=スライムの材料 1
+
+item.SlimeMakeKit(Slime) 1/10.name=スライム自作キット(スライム) 1/10
+item.SlimeMakeKit(Slime) 2/10.name=スライム自作キット(スライム) 2/10
+item.SlimeMakeKit(Slime) 3/10.name=スライム自作キット(スライム) 3/10
+item.SlimeMakeKit(Slime) 4/10.name=スライム自作キット(スライム) 4/10
+item.SlimeMakeKit(Slime) 5/10.name=スライム自作キット(スライム) 5/10
+item.SlimeMakeKit(Slime) 6/10.name=スライム自作キット(スライム) 6/10
+item.SlimeMakeKit(Slime) 7/10.name=スライム自作キット(スライム) 7/10
+item.SlimeMakeKit(Slime) 8/10.name=スライム自作キット(スライム) 8/10
+item.SlimeMakeKit(Slime) 9/10.name=スライム自作キット(スライム) 9/10
+item.SlimeMakeKit(Slime) 10/10.name=スライム自作キット(スライム) 10/10
+
+tile.concrete_white.name=白色のコンクリートブロック
+tile.concrete_black.name=黒色のコンクリートブロック
+tile.concrete_blue.name=青色のコンクリートブロック
+tile.concrete_brown.name=茶色のコンクリートブロック
+tile.concrete_green.name=緑色のコンクリートブロック
+tile.concrete_light_blue.name=空色のコンクリートブロック
+tile.concrete_lime.name=黄緑色のコンクリートブロック
+tile.concrete_magenta.name=赤紫色のコンクリートブロック
+tile.concrete_orange.name=オレンジ色のコンクリートブロック
+tile.concrete_pink.name=ピンク色のコンクリートブロック
+tile.concrete_purple.name=紫色のコンクリートブロック
+tile.concrete_red.name=赤色のコンクリートブロック
+tile.concrete_silver.name=銀色のコンクリートブロック
+
+tile.Compact SlimeBlock 1.name=圧縮スライムブロック 1
+tile.Compact SlimeBlock 2.name=圧縮スライムブロック 2
+tile.Compact SlimeBlock 3.name=圧縮スライムブロック 3
+tile.Compact SlimeBlock 4.name=圧縮スライムブロック 4
+tile.Compact SlimeBlock 5.name=圧縮スライムブロック 5
+
+achievement.Welcome to SlimeCraft.desc=ようこそスライムクラフトへ
+achievement.Welcome to SlimeCraft=ゆっくりしていってね！
+achievement.Slime Sword=スライムの剣
+achievement.Slime Sword.desc=スライムの剣
+achievement.SlimeIron Sword=鉄スライムの剣
+achievement.SlimeIron Sword.desc=鉄スライムの剣
+achievement.SlimeDiamond Sword!?=ダイアスライムの剣!?
+achievement.SlimeDiamond Sword!?.desc=ダイアスライムの剣!?
+achievement.SlimeDiamond X-Series=ダイアスライム、Xシリーズ
+achievement.SlimeDiamond X-Series.desc=ダイアスライム、Xシリーズ
+achievement.SlimeDiamond Pickaxe X=強化ダイアスライムのつるはし
+achievement.SlimeDiamond Pickaxe X.desc=強化ダイアスライムのつるはし
+achievement.SlimeDiamond Axe X=強化ダイアスライムの オノ
+achievement.SlimeDiamond Axe X.desc=強化ダイアスライムのオノ
+achievement.SlimeDiamond Shovel X=強化ダイアスライムのシャベル
+achievement.SlimeDiamond Shovel X.desc=強化ダイアスライムのシャベル
+achievement.SlimeDiamond Hoe X=強化ダイアスライムのクワ
+achievement.SlimeDiamond Hoe X.desc=強化ダイアスライムのクワ
+achievement.Pickaxe&Axe&Shovel&Hoe?=つるはし&オノ&シャベル&クワ?
+achievement.Pickaxe&Axe&Shovel&Hoe?.desc=つるはし&オノ&シャベル&クワ?
+achievement.MultiTool+Fortune=マルチツール＋幸運
+achievement.MultiTool+Fortune.desc=マルチツール＋幸運
+achievement.Welcome to ScienceClub!=ようこそ科学部へ!
+achievement.Welcome to ScienceClub!.desc=ようこそ科学部へ!

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "slimecraft",
+  "name": "Slimecraft",
+  "description": "It is MOD to add tools etc.",
+  "version": "1.1",
+  "mcversion": "1.11.2",
+  "url": "",
+  "updateUrl": "https://minecraft.curseforge.com/projects/slimecraft-add-tools-etc",
+  "authorList": ["takusan_23"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
