@@ -35,16 +35,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
         acceptedMinecraftVersions = slimecraft.MOD_ACCEPTED_MC_VERSIONS,
         useMetadata = true)
 public class slimecraft{
-
     public static final String MOD_ID = "slimecraft";
     public static final String MOD_NAME = "SlimeCraft";
     public static final String MOD_VERSION = "2.0";
     public static final String MOD_DEPENDENCIES ="required-after:Forge@[1.10.2-12.18.3.2316-,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.10.2]";
-    public static final String CLIENT_PROXY_CLASS = "slimecraft.slimecraft.proxy.ClientProxy";
-    public static final String COMMON_PROXY_CLASS = "slimecraft.slimecraft.proxy.CommonProxy";
 
-     //sword
+
+    //sword
     public static Item SlimeSword;
     public static Item SlimeIronSword;
     public static Item SlimeDiamondSword;
