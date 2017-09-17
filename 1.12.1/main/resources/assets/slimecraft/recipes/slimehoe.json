@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    " G",
+    " G"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:slime"
+    },
+ "G": {
+      "item": "slimecraft:glassstick"
+    }
+  },
+  "result": {
+    "item": "slimecraft:slimehoe"
+  }
+}

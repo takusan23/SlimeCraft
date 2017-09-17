@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "slimecraft:glassstick"
+    },
+    "X": {
+      "item": "minecraft:slime"
+    }
+  },
+  "result": {
+    "item": "slimecraft:slimepickaxe"
+  }
+}

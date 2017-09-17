@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GSG",
+    "GGG"
+  ],
+  "key": {
+    "S": {
+      "item": "slimecraft:slimetrophy"
+   },
+    "G": {
+       "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "slimecraft:slimelamp"
+  }
+}

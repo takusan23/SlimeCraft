@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DID",
+    "ITI",
+    "DID"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:rabbit_foot"
+    },
+     "I":{
+   "item":"minecraft:nether_star"
+   },
+   "T":{
+   "item":"slimecraft:potioncard"
+   }
+  },
+  "result": {
+    "item": "slimecraft:jumpboostcard"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "slimecraft:slimeiron"
+    }
+  },
+  "result": {
+    "item": "slimecraft:slimeironblock"
+  }
+}

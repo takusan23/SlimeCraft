@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:glass"
+      }
+  },
+  "result": {
+    "item": "slimecraft:glassstick",
+    "count": 1
+  }
+}

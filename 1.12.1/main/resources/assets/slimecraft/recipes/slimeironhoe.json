@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "STS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "slimecraft:slimeiron"
+    },
+   "T":{
+   "item":"slimecraft:slimehoe"
+   }
+  },
+  "result": {
+    "item": "slimecraft:slimeironhoe"
+  }
+}
