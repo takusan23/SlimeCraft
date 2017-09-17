@@ -1,1 +1,4 @@
 # SlimeCraft
+
+SlimeCraftのコードのせた。
+チュートリアルそのままなんですけどねぇ
