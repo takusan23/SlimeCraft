@@ -16,6 +16,8 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
+import net.minecraft.stats.StatList;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -205,7 +207,23 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
       }
 
 
+      //entity
+      public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
+      {
+          ItemStack itemstack = playerIn.getHeldItem(handIn);
 
+          worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+
+          if (!worldIn.isRemote)
+          {
+              EntitySlimeBallBall entitySlimeBallBall = new EntitySlimeBallBall(worldIn, playerIn);
+              entitySlimeBallBall.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+              worldIn.spawnEntity(entitySlimeBallBall);
+          }
+
+          playerIn.addStat(StatList.getObjectUseStats(this));
+          return new ActionResult(EnumActionResult.SUCCESS, itemstack);
+      }
 
 
 

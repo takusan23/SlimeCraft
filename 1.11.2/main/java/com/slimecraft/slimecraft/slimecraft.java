@@ -21,13 +21,16 @@ import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = slimecraft.MOD_ID,
         name = slimecraft.MOD_NAME,
@@ -137,6 +140,8 @@ public class slimecraft{
     public static Block CompactSlimeBlock_3;
     public static Block CompactSlimeBlock_4;
     public static Block CompactSlimeBlock_5;
+    
+    public static final ResourceLocation SlimeBallBall = new ResourceLocation("slimecraft:textures/items/slimediamond");
 
     //マテリアル
     public static ToolMaterial Dia_SLIME = EnumHelper.addToolMaterial("Diamond Slime", 5, 0, 20.0F, 20.0F, 30);;
@@ -493,6 +498,10 @@ public class slimecraft{
     	//実績かきかき
     	MinecraftForge.EVENT_BUS.register(new SlimeCraftAchievement());
     	//実績は一番下らへんにありますよぉ
+    	
+    	//entity!?
+    	  EntityRegistry.registerModEntity(SlimeBallBall, EntitySlimeBallBall.class, "slimeballball", 0, this, 250, 1, false);
+
 
 
 
@@ -1084,7 +1093,7 @@ public class slimecraft{
 
 
 
-        if (event.getSide() == Side.CLIENT)
+       if(event.getSide().isClient()){
             ModelLoader.setCustomModelResourceLocation(SlimeDiamond, 0, new ModelResourceLocation(SlimeDiamond.getRegistryName(), "inventory"));
             ModelLoader.setCustomModelResourceLocation(SlimeIron, 0, new ModelResourceLocation(SlimeIron.getRegistryName(), "inventory"));
             ModelLoader.setCustomModelResourceLocation(SlimeCookie, 0, new ModelResourceLocation(SlimeCookie.getRegistryName(), "inventory"));
@@ -1174,7 +1183,7 @@ public class slimecraft{
           	ModelLoader.setCustomModelResourceLocation(SlimeMakeing_8, 0, new ModelResourceLocation(SlimeMakeing_7.getRegistryName(),"inventory"));
           	ModelLoader.setCustomModelResourceLocation(SlimeMakeing_9, 0, new ModelResourceLocation(SlimeMakeing_7.getRegistryName(),"inventory"));
 	        ModelLoader.setCustomModelResourceLocation(SlimeMakeing_10, 0, new ModelResourceLocation(SlimeMakeing_7.getRegistryName(),"inventory"));
-
+       }
 	      //実績の追加だって。まずは宣言してね
         	Welcome_to_SlimeCraft = new Achievement("welcome_to_slimecraft", "Welcome to SlimeCraft", 0, 0, new ItemStack(Items.SLIME_BALL),null).registerStat();
         	Slime_Sword = new Achievement("slime_sword", "Slime Sword", 2, 0, new ItemStack(slimecraft.SlimeSword) ,Welcome_to_SlimeCraft).registerStat();
@@ -1200,11 +1209,17 @@ public class slimecraft{
 
 
           }
+    @SideOnly(Side.CLIENT.SERVER)
+	public void render()
+	{
+    	RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new SlimeBallBallRender(null, null, null));
+	}
 
 
 
 
     }
+
 
 
 
