@@ -19,6 +19,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -137,7 +138,20 @@ public class slimecraft{
     public static Block concrete_silver;
 
 
+  //圧縮スライムブロック
+    public static Block CompactSlimeBlock;
+    public static Item CompactSlimeBlockItem;
+    public static Block CompactSlimeBlock_2;
+    public static Item CompactSlimeBlock_2Item;
+    public static Block CompactSlimeBlock_3;
+    public static Item CompactSlimeBlock_3Item;
+    public static Block CompactSlimeBlock_4;
+    public static Item ComapctSlimeBlock_4Item;
+    public static Block CompactSlimeBlock_5;
+    public static Item ComapctSlimeBlock_5Item;
 
+    //entity
+    public static final ResourceLocation SlimeBallBall = new ResourceLocation("slimecraft:textures/items/slimediamond");
 
 
 
@@ -469,7 +483,7 @@ public class slimecraft{
                      			.setRegistryName(MOD_ID,"slimemaking10")
                      			.setUnlocalizedName("SlimeMakeKit(Slime) 10/10"),
 
-
+//blocks
                      	SlimeIronBlockItem = new ItemBlock(SlimeIronBlock)
                      	.setRegistryName(MOD_ID,"slimeironblock"),
 
@@ -484,7 +498,10 @@ public class slimecraft{
 
                      	SlimeLamp_LightItem = new ItemBlock(SlimeLamp_Light)
                      	.setRegistryName(MOD_ID,"slimelamp_light")
-    );
+    
+                     	
+    			);
+    	
     	}
     @SubscribeEvent
     protected static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -503,7 +520,7 @@ public class slimecraft{
 
 
     @SubscribeEvent
-    @SideOnly(Side.CLIENT)
+    @SideOnly(Side.CLIENT.SERVER)
     public void registerModels(ModelRegistryEvent event) {
 
 
@@ -731,6 +748,12 @@ public class slimecraft{
 */
 
     }
+    @SideOnly(Side.CLIENT.SERVER)
+   	public void render()
+   	{
+       	RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new SlimeBallBallRender(null, null, null));
+   	}
+
 }
 
 
