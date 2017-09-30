@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "slimecraft:blocks/concrete_white"
-    }
-}

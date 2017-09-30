@@ -31,7 +31,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SlimeMultiTool extends ItemTool{
-	
+
+
     private final float attackDamage;
     private final Item.ToolMaterial material;
 
@@ -159,7 +160,7 @@ public SlimeMultiTool(ToolMaterial material){
 	                return EnumActionResult.SUCCESS;
 	            }
 
-	           
+
 
 	            if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
 	            {
@@ -190,7 +191,7 @@ public SlimeMultiTool(ToolMaterial material){
 	        }
 		return null;
 	    }
-	   
+
 
 
 
@@ -230,13 +231,13 @@ public SlimeMultiTool(ToolMaterial material){
           }
       }
 
-      
-      
-      
-      
+
+
+
+
       public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
       {
-          
+
 
           worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
@@ -249,8 +250,9 @@ public SlimeMultiTool(ToolMaterial material){
           playerIn.addStat(StatList.getObjectUseStats(this));
           return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
       }
-      
-     
+
+
+
       @Override
       public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean isHeld) {
     	  if (itemStack.isItemEnchanted() == false) {
@@ -263,6 +265,7 @@ public SlimeMultiTool(ToolMaterial material){
 
 			 }
    }
+
 
       @Override
       @SideOnly(Side.CLIENT)

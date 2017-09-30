@@ -2,8 +2,14 @@ package com.slimecraft.slimecraft;
 
 
 
+import com.slimecraft.slimecraft.proxy.CommonProxy;
+
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -19,14 +25,14 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = slimecraft.MOD_ID,
         name = slimecraft.MOD_NAME,
@@ -35,14 +41,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
         acceptedMinecraftVersions = slimecraft.MOD_ACCEPTED_MC_VERSIONS,
         useMetadata = true)
 public class slimecraft{
+
+
+
     public static final String MOD_ID = "slimecraft";
     public static final String MOD_NAME = "SlimeCraft";
-    public static final String MOD_VERSION = "2.0";
+    public static final String MOD_VERSION = "1.3";
     public static final String MOD_DEPENDENCIES ="required-after:Forge@[1.10.2-12.18.3.2316-,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.10.2]";
+    public static final String CLIENT_PROXY_CLASS = "com.slimecraft.slimecraft.proxy.ClientProxy";
+    public static final String COMMON_PROXY_CLASS = "com.slimecraft.slimecraft.proxy.CommonProxy";
+    public static final String SERVER_PROXY_CLASS = "com.slimecraft.slimecraft.proxy.ServerProxy";
 
-
-    //sword
+     //sword
     public static Item SlimeSword;
     public static Item SlimeIronSword;
     public static Item SlimeDiamondSword;
@@ -136,13 +147,13 @@ public class slimecraft{
     public static Block CompactSlimeBlock_4;
     public static Block CompactSlimeBlock_5;
 
-    //test
-    public static Item TestItem;
 
     //マテリアル
     public static ToolMaterial Dia_SLIME;
     public static ToolMaterial Iron_Slime;
     public static ToolMaterial SlimeTool;
+
+
 
     //クリエタブ追加
     public static final CreativeTabs SlimeCraftTab = new SlimeCraftTab("SlimeCraftTab");
@@ -165,16 +176,19 @@ public class slimecraft{
     public static Achievement Low_performance_personal_computer;
 
 
-
-
     //実績ページ追加
     public static  AchievementPage SlimeCraft_Achievement;
 
 
+    //SideProxy?
+    @SidedProxy(clientSide = slimecraft.CLIENT_PROXY_CLASS, serverSide = slimecraft.COMMON_PROXY_CLASS)
+    public static CommonProxy proxy;
 
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
+    	//proxy
+    	proxy.preInit(event);
 
 
    		//mob drop
@@ -888,17 +902,6 @@ public class slimecraft{
 
 
 
-
-
-           	//entity
-           	   EntityRegistry.registerModEntity(EntitySlimeBallBall.class, "slimeballball", 0, this, 250, 1, false);
-
-
-
-
-
-
-
                  	 GameRegistry.addRecipe(new ItemStack(slimecraft.SlimeIronBlock),
                      		"DDD","DDD","DDD",'D',slimecraft.SlimeIron
                      		);
@@ -1335,7 +1338,18 @@ public class slimecraft{
             	AchievementPage.registerAchievementPage(SlimeCraft_Achievement);
 
 
+            //SlimeBallBall
+           	EntityRegistry.registerModEntity(EntitySlimeBallBall.class, "slimeballball", 0, this , 250, 1, false);
 
+           	RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new IRenderFactory() {
+        		@Override
+        		public Render createRenderFor(RenderManager manager)
+        		{
+
+        			return new RenderSnowball(manager, Items.SLIME_BALL, Minecraft.getMinecraft().getRenderItem());
+        		}
+        	});
+           	//ここまで
 
 }
 
@@ -1347,13 +1361,11 @@ public class slimecraft{
         }}
         }
 }
-    			 }}}}}
-
-    @SideOnly(Side.CLIENT)
-	public void render()
-	{
-    	RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new SlimeBallBallRender(null, null, null));
-	}
+    			 }}}}
 
 
+
+    }
 }
+
+

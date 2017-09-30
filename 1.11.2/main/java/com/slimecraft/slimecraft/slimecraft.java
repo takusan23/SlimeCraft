@@ -3,14 +3,17 @@ package com.slimecraft.slimecraft;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -21,6 +24,7 @@ import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -29,8 +33,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = slimecraft.MOD_ID,
         name = slimecraft.MOD_NAME,
@@ -42,7 +44,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class slimecraft{
     public static final String MOD_ID = "slimecraft";
     public static final String MOD_NAME = "SlimeCraft";
-    public static final String MOD_VERSION = "1.1";
+    public static final String MOD_VERSION = "1.3";
     public static final String MOD_DEPENDENCIES ="required-after:forge@[1.11.2-13.20.1.2386,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.11.2]";
 
@@ -140,8 +142,8 @@ public class slimecraft{
     public static Block CompactSlimeBlock_3;
     public static Block CompactSlimeBlock_4;
     public static Block CompactSlimeBlock_5;
-    
-    public static final ResourceLocation SlimeBallBall = new ResourceLocation("slimecraft:textures/items/slimediamond");
+
+    public static final ResourceLocation SlimeBallBall = new ResourceLocation("");
 
     //マテリアル
     public static ToolMaterial Dia_SLIME = EnumHelper.addToolMaterial("Diamond Slime", 5, 0, 20.0F, 20.0F, 30);;
@@ -162,6 +164,8 @@ public class slimecraft{
     public static Achievement Pickaxe_Axe_Shovel_Hoe;
     public static Achievement MultiTool_Fortune;
     public static Achievement Welcome_to_ScienceClub;
+    public static Achievement EasyFood;
+    public static Achievement Low_performance_personal_computer;
 
     //実績ページ追加
     public static  AchievementPage SlimeCraft_Achievement;
@@ -190,9 +194,7 @@ public class slimecraft{
     			.setUnlocalizedName("Glass Stick")
     			.setRegistryName(MOD_ID,"glassstick"),
 
-    	 SlimeCookie = new ItemFood(10, true)
-    	 		.setCreativeTab(SlimeCraftTab)
-    	 		.setUnlocalizedName("Slime Cookie")
+    	 SlimeCookie = new SlimeCookie(10, true)
     	 		.setRegistryName(MOD_ID,"slimecookie"),
 
 
@@ -498,7 +500,7 @@ public class slimecraft{
     	//実績かきかき
     	MinecraftForge.EVENT_BUS.register(new SlimeCraftAchievement());
     	//実績は一番下らへんにありますよぉ
-    	
+
     	//entity!?
     	  EntityRegistry.registerModEntity(SlimeBallBall, EntitySlimeBallBall.class, "slimeballball", 0, this, 250, 1, false);
 
@@ -647,21 +649,21 @@ public class slimecraft{
 
         GameRegistry.register(CompactSlimeBlock,compactslimeblockregistry);
         GameRegistry.register(comapctslimeblockItem,compactslimeblockregistry);
-        
+
         CompactSlimeBlock_2 = new compactslimeblock_2();
             ResourceLocation compactslimeblock_2registry = new ResourceLocation(MOD_ID,"compactslimeblock_2");
             ItemBlock comapctslimeblock_2Item = new ItemBlock(CompactSlimeBlock_2);
 
             GameRegistry.register(CompactSlimeBlock_2,compactslimeblock_2registry);
             GameRegistry.register(comapctslimeblock_2Item,compactslimeblock_2registry);
-            
+
         CompactSlimeBlock_3 = new compactslimeblock_3();
                 ResourceLocation compactslimeblock_3registry = new ResourceLocation(MOD_ID,"compactslimeblock_3");
                 ItemBlock comapctslimeblock_3Item = new ItemBlock(CompactSlimeBlock_3);
 
                 GameRegistry.register(CompactSlimeBlock_3,compactslimeblock_3registry);
                 GameRegistry.register(comapctslimeblock_3Item,compactslimeblock_3registry);
-              
+
 
         CompactSlimeBlock_4 = new compactslimeblock_4();
                   ResourceLocation compactslimeblock_4registry = new ResourceLocation(MOD_ID,"compactslimeblock_4");
@@ -669,14 +671,14 @@ public class slimecraft{
 
                   GameRegistry.register(CompactSlimeBlock_4,compactslimeblock_4registry);
                   GameRegistry.register(comapctslimeblock_4Item,compactslimeblock_4registry);
-                 
+
         CompactSlimeBlock_5 = new compactslimeblock_5();
                 ResourceLocation compactslimeblock_5registry = new ResourceLocation(MOD_ID,"compactslimeblock_5");
                  ItemBlock comapctslimeblock_5Item = new ItemBlock(CompactSlimeBlock_5);
 
                 GameRegistry.register(CompactSlimeBlock_5,compactslimeblock_5registry);
                 GameRegistry.register(comapctslimeblock_5Item,compactslimeblock_5registry);
-               
+
 
 
 
@@ -1167,7 +1169,7 @@ public class slimecraft{
            	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CompactSlimeBlock_4), 0, new ModelResourceLocation(MOD_ID + ":" + "compactslimeblock_4", "inventory"));
          	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CompactSlimeBlock_5), 0, new ModelResourceLocation(MOD_ID + ":" + "compactslimeblock_5", "inventory"));
 
-          	
+
         	ModelLoader.setCustomModelResourceLocation(SlimeMakeKit, 0, new ModelResourceLocation(SlimeMakeKit.getRegistryName(),"inventory"));
        	    ModelLoader.setCustomModelResourceLocation(SlimeMakeKit_2, 0, new ModelResourceLocation(SlimeMakeKit_2.getRegistryName(),"inventory"));
        	    ModelLoader.setCustomModelResourceLocation(SlimeMakekit_3, 0, new ModelResourceLocation(SlimeMakekit_3.getRegistryName(),"inventory"));
@@ -1199,23 +1201,29 @@ public class slimecraft{
         	MultiTool_Fortune = new Achievement("multitool_fortune", "MultiTool+Fortune", 10, 2, new ItemStack(slimecraft.SlimeMultiToolFortune), SlimeDiamond_X_Series).registerStat();
 
         	Welcome_to_ScienceClub = new Achievement("welcome_to_science_club", "Welcome to ScienceClub!", 0, 5, new ItemStack(slimecraft.SlimeMakeing_1), null).registerStat();
+        	EasyFood = new Achievement("easyfood", "Easy_Food", 2, 5, new ItemStack(slimecraft.SlimeCookie),null).registerStat();
+        	Low_performance_personal_computer = new Achievement("Low_performance_personal_computer", "Low_Performance_Personal_Computer", 4, 5, new ItemStack(slimecraft.FoodCard), null).registerStat();
 
         	//実績ページ？上の工程が出来たら最後に１行目の文に,で追加してね
         	SlimeCraft_Achievement = new AchievementPage("SlimeCraft",Welcome_to_SlimeCraft,Slime_Sword,SlimeIron_Sword,SlimeDiamond_Sword,
-        			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondAxe_X,SlimeDiamondHoe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub);
+        			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondAxe_X,SlimeDiamondHoe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub
+        			,EasyFood,Low_performance_personal_computer);
         	AchievementPage.registerAchievementPage(SlimeCraft_Achievement);
 
+        	//SlimeBallBall
+           	EntityRegistry.registerModEntity(SlimeBallBall, EntitySlimeBallBall.class, "slimeballball", 0, this , 250, 1, false);
 
+           	RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new IRenderFactory() {
+        		@Override
+        		public Render createRenderFor(RenderManager manager)
+        		{
 
+        			return new RenderSnowball(manager, Items.SLIME_BALL, Minecraft.getMinecraft().getRenderItem());
+        		}
+        	});
+           	//ここまで
 
           }
-    @SideOnly(Side.CLIENT.SERVER)
-	public void render()
-	{
-    	RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new SlimeBallBallRender(null, null, null));
-	}
-
-
 
 
     }

@@ -8,4 +8,5 @@ public class SlimeIronAxe extends ItemAxe {
 		super(toolMaterial);
 	}
 
+
 }

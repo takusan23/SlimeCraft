@@ -14,16 +14,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class EntitySlimeBallBall extends EntityThrowable{
-	
-
-
-
-
 
 	public EntitySlimeBallBall(World worldIn)
     {
@@ -39,18 +31,12 @@ public class EntitySlimeBallBall extends EntityThrowable{
     {
         super(worldIn, x, y, z);
     }
-    
-    @EventHandler
-	 public void init(FMLInitializationEvent event) {
 
-    	EntityRegistry.registerModEntity(EntitySlimeBallBall.class, "SlimeBallBall", 0,this, 250, 1, false);
-    	
-    }
-    
+
 
     @Override
     protected void onImpact(RayTraceResult result) {
-		
+
 		if (result.entityHit != null)
         {
             int i = 0;
@@ -59,48 +45,48 @@ public class EntitySlimeBallBall extends EntityThrowable{
             {
                 i = 30;
             }
-            
+
             if (result.entityHit instanceof EntitySlime)
             {
             	entityDropItem(new ItemStack(Blocks.SLIME_BLOCK), 50);
-            
+
             }
-            
+
             //友好MOB、プレイヤー、etc
             if (result.entityHit instanceof EntityPlayer)
             {
-            
+
             	i = 0;
 
             }
-            
+
             if (result.entityHit instanceof EntityWolf)
             {
-            
+
                 i = 0;
-            	
+
             }
-            
+
             if (result.entityHit instanceof EntityOcelot)
             {
-            
+
             	i = 0;
 
             }
 
             if (result.entityHit instanceof EntityHorse)
             {
-            
+
             	i = 0;
 
             }
-            
-           
+
+
 
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
 	}
 
-		
+
 		for (int j = 0; j < 8; ++j)
         {
             this.worldObj.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, new int[0]);
@@ -108,6 +94,7 @@ public class EntitySlimeBallBall extends EntityThrowable{
 
     }
 
-	
-	
+
+
+
 }

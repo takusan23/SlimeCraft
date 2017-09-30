@@ -7,13 +7,12 @@ public class SlimeCookie extends ItemFood {
 
 	public SlimeCookie(int amount, boolean isWolfFood) {
 		super(amount, isWolfFood);
-		// TODO 自動生成されたコンストラクター・スタブ
-	
+
 	this.setCreativeTab(slimecraft.SlimeCraftTab);
     this.setUnlocalizedName("Slime Cookie");
-	
+
 	}
-	
+
 	public int getMaxItemUseDuration(ItemStack itemStack) {
 		return 8;
 	}
