@@ -29,6 +29,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -184,12 +185,16 @@ public class slimecraft{
     @SidedProxy(clientSide = slimecraft.CLIENT_PROXY_CLASS, serverSide = slimecraft.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
 
+    @Instance(MOD_ID)
+    public static slimecraft Instance;
+
+
+
+
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
-    	//proxy
     	proxy.preInit(event);
-
 
    		//mob drop
     	MinecraftForge.EVENT_BUS.register(new MobDrop());

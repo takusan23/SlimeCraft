@@ -30,6 +30,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+
+
 public class SlimeMultiTool extends ItemTool{
 
 
@@ -43,8 +45,10 @@ public SlimeMultiTool(ToolMaterial material){
     this.attackDamage = 3.0F + material.getDamageVsEntity();
     this.material = material;
 
-
 }
+
+
+
 	@Override
 	public Set<String> getToolClasses(ItemStack stack) {
 	    return ImmutableSet.of("pickaxe","spade","axe","hoe");
@@ -273,6 +277,9 @@ public SlimeMultiTool(ToolMaterial material){
 
       list.add(ChatFormatting.GREEN+"SlimeCraft End Contents");
       }
+
+
+
 
 
 }
