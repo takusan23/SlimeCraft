@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "slimecraft:slimemaking8"
+    }
+  ],
+  "result": {
+    "item": "slimecraft:slimemaking9"
+  }
+}

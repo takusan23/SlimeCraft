@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DID",
+    "ITI",
+    "DID"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:rabbit_stew"
+    },
+     "I":{
+   "item":"minecraft:nether_star"
+   },
+   "T":{
+   "item":"slimecraft:hungercard"
+   }
+  },
+  "result": {
+    "item": "slimecraft:foodcard"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DID",
+    "ITI",
+    "DID"
+  ],
+  "key": {
+    "D": {
+      "item": "slimecraft:slimediamondblock"
+    },
+     "I":{
+   "item":"slimecraft:slimeironblock"
+   },
+   "T":{
+   "item":"slimecraft:slimediamondhoe"
+   }
+  },
+  "result": {
+    "item": "slimecraft:slimediamondhoex"
+  }
+}
