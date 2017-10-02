@@ -25,6 +25,7 @@ public class SlimeLamp extends Block {
 		super(Material.WOOD);
         setCreativeTab(slimecraft.SlimeCraftTab);
         setUnlocalizedName("SlimeLamp");
+        setRegistryName("slimelamp");
         setHardness(1.0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
@@ -40,7 +41,7 @@ public class SlimeLamp extends Block {
         else
         {
 
-            worldIn.setBlockState(pos, slimecraft.SlimeLamp_Light.getDefaultState(), 2);
+            worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeLamp_Light.getDefaultState(), 2);
 
             }
 

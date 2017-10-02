@@ -16,67 +16,67 @@ public class SlimeCraftAchievement {
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeSword) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeSword) {
             e.getEntityPlayer().addStat(slimecraft.Slime_Sword);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeIronSword) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeIronSword) {
             e.getEntityPlayer().addStat(slimecraft.SlimeIron_Sword);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeDiamondSword) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondSword) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamond_Sword);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeDiamondSwordX) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondSwordX) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamond_X_Series);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeDiamondPickaxeX) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondPickaxeX) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamondPickaxe_X);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeDiamondAxeX) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondAxeX) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamondAxe_X);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeDiamondShovelX) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondShovelX) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamondShovel_X);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeDiamondHoeX) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondHoeX) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamondHoe_X);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeMultiTool) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeMultiTool) {
             e.getEntityPlayer().addStat(slimecraft.Pickaxe_Axe_Shovel_Hoe);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeMultiToolFortune) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeMultiToolFortune) {
             e.getEntityPlayer().addStat(slimecraft.MultiTool_Fortune);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.SlimeMakeing_1) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeMakeing_1) {
             e.getEntityPlayer().addStat(slimecraft.Welcome_to_ScienceClub);
             }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-            && e.getItem().getEntityItem().getItem() == slimecraft.SlimeCookie) {
+            && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeCookie) {
         e.getEntityPlayer().addStat(slimecraft.EasyFood);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == slimecraft.FoodCard) {
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.FoodCard) {
             e.getEntityPlayer().addStat(slimecraft.Low_performance_personal_computer);
         }
     }

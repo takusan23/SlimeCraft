@@ -7,10 +7,9 @@ public class SlimePickaxe extends ItemPickaxe{
 		super(toolMaterial);
 
 
-
 	}
-	 
-     
+
+
 
 
 

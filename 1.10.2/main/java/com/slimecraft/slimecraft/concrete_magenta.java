@@ -11,6 +11,7 @@ public class concrete_magenta extends Block {
 		super(Material.ROCK);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setUnlocalizedName("concrete_magenta");
+        setRegistryName("concrete_magenta");
         setHardness(9.0F);
         setSoundType(blockSoundType.STONE);
 	}

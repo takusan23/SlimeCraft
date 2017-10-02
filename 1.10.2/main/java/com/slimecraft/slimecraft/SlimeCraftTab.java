@@ -11,7 +11,7 @@ public class SlimeCraftTab extends CreativeTabs{
 
 	@Override
 	public Item getTabIconItem(){
-		return slimecraft.SlimeDiamond;
+		return SlimeCraftItems.SlimeDiamond;
 	}
 }
 

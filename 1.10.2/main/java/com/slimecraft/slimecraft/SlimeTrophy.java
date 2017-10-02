@@ -22,12 +22,13 @@ public class SlimeTrophy extends Block {
 		super(Material.ROCK);
         setCreativeTab(slimecraft.SlimeCraftTab);
         setUnlocalizedName("SlimeTrophy");
+        setRegistryName("slimetrophy");
         setHardness(1.0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
-	
-	
-	    
+
+
+
 	public boolean isFullCube(IBlockState state)
     {
         return false;
@@ -81,5 +82,5 @@ public class SlimeTrophy extends Block {
 	    static {
 			FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 		}
-		
+
 	}

@@ -8,6 +8,7 @@ public class SlimeDiamondBlock extends Block{
         super(Material.IRON);
         setCreativeTab(slimecraft.SlimeCraftTab);
         setUnlocalizedName("SlimeDiamond Block");
+        setRegistryName("slimediamondblock");
         setHardness(5.0F);
         setSoundType(blockSoundType.STONE);
         }

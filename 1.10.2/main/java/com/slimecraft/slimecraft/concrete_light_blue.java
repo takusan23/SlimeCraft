@@ -11,6 +11,7 @@ public class concrete_light_blue extends Block {
 		super(Material.ROCK);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setUnlocalizedName("concrete_light_blue");
+        setRegistryName("concrete_light_blue");
         setHardness(9.0F);
         setSoundType(blockSoundType.STONE);
 	}

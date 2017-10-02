@@ -11,6 +11,7 @@ public class concrete_red extends Block {
 		super(Material.ROCK);
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setUnlocalizedName("concrete_red");
+        setRegistryName("concrete_red");
         setHardness(9.0F);
         setSoundType(blockSoundType.STONE);
 
