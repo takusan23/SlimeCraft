@@ -26,6 +26,7 @@ public class SlimeLamp_Linght extends Block {
 		super(Material.ROCK);
         setCreativeTab(slimecraft.SlimeCraftTab);
         setUnlocalizedName("SlimeLamp_light");
+        setRegistryName("slimelamplight");
         setHardness(1.0F);
         setLightLevel(1.0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
@@ -39,7 +40,7 @@ public class SlimeLamp_Linght extends Block {
         }
         else
         {
-            worldIn.setBlockState(pos, slimecraft.SlimeLamp.getDefaultState(), 0);
+            worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeLamp.getDefaultState(), 0);
             }
 
             return true;
@@ -47,7 +48,7 @@ public class SlimeLamp_Linght extends Block {
 
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(slimecraft.SlimeLamp);
+        return Item.getItemFromBlock(SlimeCraftBlocks.SlimeLamp);
     }
 
 	public boolean isFullCube(IBlockState state)

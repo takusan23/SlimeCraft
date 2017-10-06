@@ -37,7 +37,7 @@ public class SlimeLamp extends Block {
         }
         else
         {
-            worldIn.setBlockState(pos, slimecraft.SlimeLamp_Light.getDefaultState(), 0);
+            worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeLamp_Light.getDefaultState(), 0);
             }
 
             return true;

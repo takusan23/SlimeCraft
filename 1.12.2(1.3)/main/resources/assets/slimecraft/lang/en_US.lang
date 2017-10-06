@@ -5,7 +5,7 @@ item.SlimeIron Sword.name=SlimeIron Sword
 item.SlimeDiamond Sword.name=SlimeDiamond Sword
 item.SlimeDiamond Sword X.name=SlimeDiamond Sword X
 item.Slime Diamond.name=Slime Diamond
-item.Slime Iron.name=Slime Iron
+item.Slime Iron Ingot.name=Slime Iron
 item.Slime Cookie.name=Slime Cookie
 item.Glass Stick.name=Glass Stick
 
@@ -37,6 +37,8 @@ item.Slime MultiTool(Fortune).name=Slime MultiTool(Fortune)
 tile.SlimeIron Block.name=SlimeIron Block
 tile.SlimeDiamond Block.name=SlimeDiamond Block
 tile.SlimeTrophy.name=SimeTrohpy
+tile.Slime Lamp.name=Slime Lamp
+tile.Slime Lamp_light.name=Slime Lamp_Light
 
 item.Potion Card.name=Potion Card
 item.Speed Card.name=Speed Card
@@ -65,6 +67,12 @@ item.SlimeMakeKit(Slime) 7/10.name=SlimeMakeKit(Slime) 7/10
 item.SlimeMakeKit(Slime) 8/10.name=SlimeMakeKit(Slime) 8/10
 item.SlimeMakeKit(Slime) 9/10.name=SlimeMakeKit(Slime) 9/10
 item.SlimeMakeKit(Slime) 10/10.name=SlimeMakeKit(Slime) 10/10
+
+tile.Compact SlimeBlock 1.name=Compact SlimeBlock 1
+tile.Compact SlimeBlock 2.name=Compact SlimeBlock 2
+tile.Compact SlimeBlock 3.name=Compact SlimeBlock 3
+tile.Compact SlimeBlock 4.name=Compact SlimeBlock 4
+tile.Compact SlimeBlock 5.name=Compact SlimeBlock 5
 
 tile.concrete_white.name=White Concrete
 tile.concrete_black.name=Black Concrete

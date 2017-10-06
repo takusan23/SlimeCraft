@@ -32,7 +32,7 @@ public class SlimeMultiToolFortune extends ItemTool{
 
 
 public SlimeMultiToolFortune(ToolMaterial toolMaterial){
-	super(10, 0, slimecraft.SlimeTool, effectiveAgainst);
+	super(10, 0, SlimeCraftItems.SlimeTool, effectiveAgainst);
  }
 	@Override
 	public Set<String> getToolClasses(ItemStack stack) {
@@ -125,7 +125,7 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
         }
 		return true;}
 		return true;}
-	 
+
 	 @SuppressWarnings("incomplete-switch")
 	 public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {

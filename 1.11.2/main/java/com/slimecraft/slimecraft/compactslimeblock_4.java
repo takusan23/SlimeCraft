@@ -14,6 +14,7 @@ public class compactslimeblock_4 extends BlockBreakable {
 	public compactslimeblock_4(){
         super(Material.CLAY, false, MapColor.GRASS);
         setUnlocalizedName("Compact SlimeBlock 4");
+        setRegistryName("compactslimeblock_4");
 		setCreativeTab(slimecraft.SlimeCraftTab);
         this.slipperiness = 0.8F;
         setSoundType(blockSoundType.SLIME);

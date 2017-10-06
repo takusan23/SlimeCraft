@@ -1,9 +1,11 @@
 package com.slimecraft.slimecraft;
 
+import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import com.mojang.realmsclient.gui.ChatFormatting;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -14,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.stats.StatList;
@@ -24,16 +27,28 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+
 
 public class SlimeMultiTool extends ItemTool{
 
 
+    private final float attackDamage;
+    private final Item.ToolMaterial material;
 
 
 
-public SlimeMultiTool(ToolMaterial toolMaterial){
-	super(10, 0, slimecraft.SlimeTool, effectiveAgainst);
- }
+public SlimeMultiTool(ToolMaterial material){
+	super(10, 0, SlimeCraftItems.SlimeTool, effectiveAgainst);
+    this.attackDamage = 3.0F + material.getDamageVsEntity();
+    this.material = material;
+
+}
+
+
+
 	@Override
 	public Set<String> getToolClasses(ItemStack stack) {
 	    return ImmutableSet.of("pickaxe","spade","axe","hoe");
@@ -45,12 +60,8 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
 		    Blocks.SOUL_SAND, Blocks.MYCELIUM,Blocks.COBBLESTONE,Blocks.STONE,
 	        Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE,Blocks.IRON_BLOCK,Blocks.OBSIDIAN,
 	        Blocks.PLANKS, Blocks.BOOKSHELF, Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK, Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE,Blocks.CRAFTING_TABLE,
-
+	        SlimeCraftBlocks.SlimeIronBlock,SlimeCraftBlocks.SlimeDiamondBlock,
 	});
-
-
-
-
 
 	 public boolean canHarvestBlock(IBlockState blockIn)
     {
@@ -127,29 +138,40 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
 		return true;}
 
 
-	 @SuppressWarnings("incomplete-switch")
-	 public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	 public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
-	        ItemStack itemstack = player.getHeldItem(hand);
 
-	        if (!player.canPlayerEdit(pos.offset(facing), facing, itemstack))
+		 if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
 	        {
 	            return EnumActionResult.FAIL;
 	        }
 	        else
 	        {
-	            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(itemstack, player, worldIn, pos);
-	            if (hook != 0) return hook > 0 ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
-
 	            IBlockState iblockstate = worldIn.getBlockState(pos);
 	            Block block = iblockstate.getBlock();
+
+	            if (facing != EnumFacing.DOWN && worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR && block == Blocks.GRASS)
+	            {
+	                IBlockState iblockstate1 = Blocks.GRASS_PATH.getDefaultState();
+	                worldIn.playSound(playerIn, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+	                if (!worldIn.isRemote)
+	                {
+	                    worldIn.setBlockState(pos, iblockstate1, 11);
+	                    stack.damageItem(1, playerIn);
+	                }
+
+	                return EnumActionResult.SUCCESS;
+	            }
+
+
 
 	            if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
 	            {
 	                if (block == Blocks.GRASS || block == Blocks.GRASS_PATH)
 	                {
-	                    this.setBlock(itemstack, player, worldIn, pos, Blocks.FARMLAND.getDefaultState());
-	                    return EnumActionResult.SUCCESS;
+	                    this.setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
+	                   return EnumActionResult.SUCCESS;
 	                }
 
 	                if (block == Blocks.DIRT)
@@ -157,18 +179,25 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
 	                    switch ((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT))
 	                    {
 	                        case DIRT:
-	                            this.setBlock(itemstack, player, worldIn, pos, Blocks.FARMLAND.getDefaultState());
+	                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
 	                            return EnumActionResult.SUCCESS;
 	                        case COARSE_DIRT:
-	                            this.setBlock(itemstack, player, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
+	                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
 	                            return EnumActionResult.SUCCESS;
 	                    }
 	                }
 	            }
+	            else
+	            {
+	                return EnumActionResult.PASS;
+	            }
 
-	            return EnumActionResult.PASS;
 	        }
+		return null;
 	    }
+
+
+
 
 
       public float getStrVsBlock(ItemStack stack, Block block) {
@@ -176,12 +205,12 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
           return effectiveAgainst.contains(block) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, (IBlockState) block);
       }
 
-    /*  public boolean getdigspeed(IBlockState blockIn)
+      public float getDamageVsEntity()
       {
-          Block block = blockIn.getBlock();
-          return block == Blocks.SNOW_LAYER ? true : block == Blocks.SNOW;
+          return this.material.getDamageVsEntity();
       }
-      */
+
+
 
 
       public float getStrVsBlock(ItemStack stack, IBlockState state)
@@ -207,7 +236,10 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
       }
 
 
-      //entity
+
+
+
+
       public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
       {
           ItemStack itemstack = playerIn.getHeldItem(handIn);
@@ -227,14 +259,6 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
 
 
 
-
-
-
-
-      //public float getStrVsBlock(ItemStack stack, Block block){
-    	//  return 50.F;
-
-
       @Override
       public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean isHeld) {
     	  if (itemStack.isItemEnchanted() == false) {
@@ -246,12 +270,18 @@ public SlimeMultiTool(ToolMaterial toolMaterial){
 	             itemStack.addEnchantment(Enchantments.MENDING,1);
 
 			 }
+   }
+
+
+      @Override
+      @SideOnly(Side.CLIENT)
+      public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean advanced) {
+
+      list.add(ChatFormatting.GREEN+"SlimeCraft End Contents");
       }
 
 
 
-	}
 
 
-
-
+}

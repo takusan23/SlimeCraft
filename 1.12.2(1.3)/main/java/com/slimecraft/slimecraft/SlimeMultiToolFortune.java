@@ -32,7 +32,7 @@ public class SlimeMultiToolFortune extends ItemTool{
 
 
 public SlimeMultiToolFortune(ToolMaterial toolMaterial){
-	super(10, 0, slimecraft.SlimeTool, effectiveAgainst);
+	super(10, 0, SlimeCraftItems.SlimeTool, effectiveAgainst);
  }
 	@Override
 	public Set<String> getToolClasses(ItemStack stack) {
@@ -125,7 +125,7 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
         }
 		return true;}
 		return true;}
-	 
+
 	 @SuppressWarnings("incomplete-switch")
 	 public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
@@ -201,6 +201,7 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
           }
       }
 
+
       public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
       {
           ItemStack itemstack = playerIn.getHeldItem(handIn);
@@ -217,7 +218,6 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
           playerIn.addStat(StatList.getObjectUseStats(this));
           return new ActionResult(EnumActionResult.SUCCESS, itemstack);
       }
-
 
 
 

@@ -11,6 +11,6 @@ public class SlimeCraftTab extends CreativeTabs{
 	@Override
 	public ItemStack getTabIconItem() {
 		// TODO 自動生成されたメソッド・スタブ
-		return new ItemStack(slimecraft.SlimeDiamond);
+		return new ItemStack(SlimeCraftItems.SlimeDiamond);
 	}
 }

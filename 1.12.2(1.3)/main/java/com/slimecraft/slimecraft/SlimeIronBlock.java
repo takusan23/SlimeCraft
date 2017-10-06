@@ -12,4 +12,5 @@ public class SlimeIronBlock extends Block{
         this.setRegistryName("slimeironblock");
         this.setHardness(5.0F);
     }
+
 }

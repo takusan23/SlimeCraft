@@ -11,6 +11,7 @@ public class concrete_lime extends Block {
 			super(Material.ROCK);
 			setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	        setUnlocalizedName("concrete_lime");
+	        setRegistryName("concrete_lime");
 	        setHardness(9.0F);
 	        setSoundType(blockSoundType.STONE);
 	}

@@ -22,6 +22,7 @@ public class SlimeTrophy extends Block {
 		super(Material.ROCK);
         setCreativeTab(slimecraft.SlimeCraftTab);
         setUnlocalizedName("SlimeTrophy");
+        setRegistryName("slimetrophy");
         setHardness(1.0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}

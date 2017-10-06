@@ -15,5 +15,4 @@ public class SlimeCookie extends ItemFood{
 		return 8;
 	}
 
-
 }
