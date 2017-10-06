@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "slimecraft:compactslimeblock2"
+    }
+  ],
+  "result": {
+    "item": "slimecraft:compactslimeblock",
+    "count":9
+  }
+}
