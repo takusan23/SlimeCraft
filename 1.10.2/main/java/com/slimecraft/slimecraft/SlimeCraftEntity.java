@@ -6,9 +6,9 @@ public class SlimeCraftEntity {
 
 	public static void register() {
        	EntityRegistry.registerModEntity(EntitySlimeBallBall.class, "slimeballball", 0, slimecraft.Instance , 250, 1, false);
-       	
+       	EntityRegistry.registerModEntity(EntityUltimateSlimeBallBall.class, "ultimateslimeballball", 1, slimecraft.Instance, 250, 1, false);
 
-       	
+
 	}
 
 }

@@ -32,6 +32,8 @@ item.SlimeIron Shovel.name=SlimeIron Shovel
 item.Slime MultiTool.name=Slime MultiTool
 tile.SlimeCraft End Contents.name=SlimeCraft End Contents
 item.Slime MultiTool(Fortune).name=Slime MultiTool(Fortune)
+item.Ultimate SlimeStaff.name=Ultimate SlimeStaff
+item.Ultimate SlimeBall.name=Ultimate SlimeBall
 
 tile.SlimeIron Block.name=SlimeIron Block
 tile.SlimeDiamond Block.name=SlimeDiamond Block
