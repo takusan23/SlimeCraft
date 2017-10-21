@@ -643,6 +643,13 @@ public class slimecraft{
    		"III","GGG","III",'I',Items.IRON_INGOT,'G',Items.GOLD_INGOT
    		);
 
+   GameRegistry.addRecipe(new ItemStack(SlimeCraftItems.UltimateSlimeStaff),
+		"QBS","EMB","SEQ",'B',Items.BLAZE_ROD,'E',Blocks.END_ROD,'S',SlimeCraftBlocks.CompactSlimeBlock_5,'M',SlimeCraftItems.SlimeMultiTool
+		);
+
+   GameRegistry.addRecipe(new ItemStack(SlimeCraftItems.UltimateSlimeStaff),
+		"QBS","EMB","SEQ",'B',Items.BLAZE_ROD,'E',Blocks.END_ROD,'S',SlimeCraftBlocks.CompactSlimeBlock_5,'M',SlimeCraftItems.SlimeMultiToolFortune
+		);
 
 
 
