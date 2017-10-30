@@ -11,7 +11,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
@@ -47,10 +46,14 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
 
     //@SuppressWarnings("null")
 	protected void onImpact(RayTraceResult result) {
-
+		
+		EntityPlayer playerIn = null;
+		Entity tagetentity = null;
+		
 		if (result.entityHit != null)
         {
-            int i = 30;
+            int i = 47;
+            
 
             //友好MOB、プレイヤー、etc
 
@@ -74,37 +77,45 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
             	i = 0;
             }
             //それ以外
-            if (result.entityHit instanceof EntitySlime)
-            {
-            	entityDropItem(new ItemStack(Blocks.SLIME_BLOCK), (float)getYOffset());
-            }
+             
 
-            result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
+            result.entityHit.attackEntityFrom(DamageSource.causeMobDamage(this.getThrower()), (float)i);
+           
+            
 
             //範囲攻撃
             {
 
     	        //範囲攻撃
     			//EntityMOBでモンスターにだけダメージを入れる
-            	//iは30なので30ダメージ入る
-    			EntityPlayer playerIn = null;
-    			Entity tagetentity = null;
+            	
 
-
-    		    for (EntityMob entityMob : this.worldObj.getEntitiesWithinAABB(EntityMob.class, this.getEntityBoundingBox().expand(10.0D, 10.0D, 10.0D)))
+    		    for (EntityMob entityMob : this.worldObj.getEntitiesWithinAABB(EntityMob.class, this.getEntityBoundingBox().expand(16.0D, 16.0D, 16.0D)))
     		    {
     		    	//if (entitylivingbase != playerIn && entitylivingbase != tagetentity && !this.isOnSameTeam(entitylivingbase) && this.getDistanceSqToEntity(entitylivingbase) < 9.0D)
-    		    	if (entityMob != tagetentity)
+    		    	if (entityMob != null)
     		    	{
     		            entityMob.knockBack(playerIn, 0.4F, (double)MathHelper.sin(this.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(this.rotationYaw * 0.017453292F)));
-    		            entityMob.attackEntityFrom(DamageSource.causeThrownDamage(playerIn, this.getThrower()), (float)i);
+    		            entityMob.attackEntityFrom(DamageSource.causeMobDamage(this.getThrower()), (float)i);
     		            //entitylivingbase.attackEntityFrom(DamageSource.causeThrownDamage(playerIn, this.getThrower()), (float)d);
     		    	}
-
-
-                    this.worldObj.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
+    		    	
+                     this.worldObj.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
 
             }
+    		    for (EntitySlime entitySlime : this.worldObj.getEntitiesWithinAABB(EntitySlime.class, this.getEntityBoundingBox().expand(16.0D, 16.0D, 16.0D)))
+    		    {    	
+    		    	if (entitySlime != null)
+    		    	{
+    		            entitySlime.knockBack(playerIn, 0.4F, (double)MathHelper.sin(this.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(this.rotationYaw * 0.017453292F)));
+    		            entitySlime .attackEntityFrom(DamageSource.causeMobDamage(this.getThrower()), (float)i);
+   		    		
+    		    	}
+    		    	
+                    this.worldObj.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
+
+    		    }
+
 
           }
         }
@@ -112,8 +123,6 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
 		for (int j = 0; j < 8; ++j)
         {
             this.worldObj.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, new int[0]);
-            //this.worldObj.loadedEntityList.clear();
-
 
         }
 

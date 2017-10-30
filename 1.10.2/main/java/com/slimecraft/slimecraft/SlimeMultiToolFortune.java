@@ -1,11 +1,9 @@
 package com.slimecraft.slimecraft;
 
-import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import com.mojang.realmsclient.gui.ChatFormatting;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -26,8 +24,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SlimeMultiToolFortune extends ItemTool{
 
@@ -272,13 +268,7 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
       }
 
 
-      @Override
-      @SideOnly(Side.CLIENT)
-      public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean advanced) {
-
-      list.add(ChatFormatting.YELLOW+"SlimeCraft End Contents");
-      }
-
+ 
 
 	}
 

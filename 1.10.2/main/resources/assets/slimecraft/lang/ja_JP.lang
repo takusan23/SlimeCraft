@@ -88,6 +88,8 @@ tile.Compact SlimeBlock 3.name=圧縮スライムブロック 3
 tile.Compact SlimeBlock 4.name=圧縮スライムブロック 4
 tile.Compact SlimeBlock 5.name=圧縮スライムブロック 5
 
+tile.Slime Table.name=スライム作業台
+
 achievement.Welcome to SlimeCraft.desc=ようこそスライムクラフトへ
 achievement.Welcome to SlimeCraft=ゆっくりしていってね！
 achievement.Slime Sword=スライムの剣
@@ -116,4 +118,8 @@ achievement.Easy_Food=手軽な食べ物
 achievement.Easy_Food.desc=手軽な食べ物
 achievement.Low_Performance_Personal_Computer=低スペックパソコン
 achievement.Low_Performance_Personal_Computer.desc=低スペックパソコン
+achievement.SlimeStaff=さらに便利に
+achievement.SlimeStaff.desc=多分こっちがエンドコンテンツです
+achievement.Range Attack=範囲攻撃をさらに便利に
+achievement.Range Attack.desc=エンダーマンにもダメージを与えます
 achievement

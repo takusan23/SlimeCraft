@@ -83,4 +83,8 @@ public class SlimeTrophy extends Block {
 			FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 		}
 
+
+	    //
+
+
 	}

@@ -79,6 +79,12 @@ public class SlimeCraftAchievement {
                 && e.getItem().getEntityItem().getItem() == SlimeCraftItems.FoodCard) {
             e.getEntityPlayer().addStat(slimecraft.Low_performance_personal_computer);
         }
+		
+		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.UltimateSlimeStaff) {
+            e.getEntityPlayer().addStat(slimecraft.SlimeStaff);
+        }
+
     }
 
 

@@ -35,7 +35,7 @@ public class UltimateSlimeStaff extends ItemTool{
 
 		public UltimateSlimeStaff(ToolMaterial toolMaterial) {
 		//super(attackDamageIn, attackSpeedIn, materialIn, effectiveBlocksIn);
-			super(10, 2, SlimeCraftItems.UltimateTool, effectiveAgainst);
+			super(10, 20, SlimeCraftItems.UltimateTool, effectiveAgainst);
 
 
 
@@ -247,7 +247,6 @@ public class UltimateSlimeStaff extends ItemTool{
 	      public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
 	      {
 
-
 	          worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
 	          if (!worldIn.isRemote)
@@ -256,9 +255,8 @@ public class UltimateSlimeStaff extends ItemTool{
 	              entityUltimateSlimeBallBall.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
 	              worldIn.spawnEntityInWorld(entityUltimateSlimeBallBall);
 	          }
-
-
-
+	          playerIn.addStat(slimecraft.Range_attack);
+	          
 	          playerIn.addStat(StatList.getObjectUseStats(this));
 	          return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
 	      }
@@ -277,6 +275,9 @@ public class UltimateSlimeStaff extends ItemTool{
 
 				 }
 	   }
+	      
+	      
+
 /*
      public boolean attackEntityFrom(DamageSource source, float amount)
 	      {

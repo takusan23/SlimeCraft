@@ -89,6 +89,8 @@ tile.Compact SlimeBlock 3.name=Compact SlimeBlock 3
 tile.Compact SlimeBlock 4.name=Compact SlimeBlock 4
 tile.Compact SlimeBlock 5.name=Compact SlimeBlock 5
 
+tile.Slime Table.name=Slime Table
+
 achievement.Welcome to SlimeCraft.desc=Achievement is achieved when picking up an item
 achievement.Welcome to SlimeCraft=Welcome to SlimeCraft
 achievement.Slime Sword=Slime Sword
@@ -117,6 +119,13 @@ achievement.Easy_Food=Easy Food
 achievement.Easy_Food.desc=Easy Food
 achievement.Low_Performance_Personal_Computer=Low Performance Personal Computer
 achievement.Low_Performance_Personal_Computer.desc=Low Performance Personal Computer
+achievement.SlimeStaff=It became more convenient
+achievement.SlimeStaff.desc=Maybe this is the end content
+achievement.Range Attack=Make range attack even more convenient
+achievement.Range Attack.desc=Even damage to the enderman!
+achievement
+achievement
+achievement
 achievement
 achievement
 achievement
