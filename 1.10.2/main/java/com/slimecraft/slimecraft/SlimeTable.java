@@ -17,7 +17,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 public class SlimeTable extends Block {
@@ -25,7 +24,7 @@ public class SlimeTable extends Block {
 	public static final PropertyDirection FACING;
 
     public SlimeTable() {
-        super(Material.IRON);
+        super(Material.ROCK);
         setCreativeTab(slimecraft.SlimeCraftTab);
         setRegistryName("slimetable");
         setUnlocalizedName("Slime Table");
@@ -33,11 +32,11 @@ public class SlimeTable extends Block {
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     }
 
-	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+/*	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
         return worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) && worldIn.getBlockState(pos.down()).isSideSolid(worldIn, pos, EnumFacing.UP);
     }
-
+*/
 
     public IBlockState withRotation(IBlockState state, Rotation rot)
     {
@@ -81,48 +80,137 @@ public class SlimeTable extends Block {
 	//新しいクラフティングシステム
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem,EnumFacing side, float hitX, float hitY, float hitZ)
 	{
+		playerIn.addStat(slimecraft.SlimeCraft_New_Crafting_System);
+
 		//MOBドロップからスライムボール
          if (heldItem != null && (heldItem.getItem() == Items.ROTTEN_FLESH))
          {
-   		   heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
-      	   playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
-   		   return true;
-         }
-         if (heldItem != null && (heldItem.getItem() == Items.BONE))
-         {
-   		   heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
-      	   playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
-   		  return true;
-         }
-         if (heldItem != null && (heldItem.getItem() == Items.ARROW))
-         {
-   		   heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
-      	   playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
-   		  return true;
-         }
-         if (heldItem != null && (heldItem.getItem() == Items.GUNPOWDER))
-         {
-   		   heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
-      	   playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
-   		  return true;
-         }
-         if (heldItem != null && (heldItem.getItem() == Items.STRING))
-         {
-   		   heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
-      	   playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
-   		  return true;
+        	 //4個以上持っている場合変換する
+             if (heldItem.stackSize >= 4)
+             {
+            	 heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
+            	 return true;
+             }
          }
 
-         if (heldItem != null && (heldItem.getItem() == Items.BOOK))
+         if (heldItem != null && (heldItem.getItem() == Items.BONE))
          {
-        	 if (!worldIn.isRemote)
-        	 {
-        		 playerIn.addChatMessage(new TextComponentString("OverWorld MonsterDrop Item ×4 = SlimeBall"));
-        		 return true;
-        	 }
-        }
+             if (heldItem.stackSize >= 4)
+             {
+            	 heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
+            	 return true;
+             }
+         }
+
+         if (heldItem != null && (heldItem.getItem() == Items.ARROW))
+         {
+             if (heldItem.stackSize >= 4)
+             {
+            	 heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
+            	 return true;
+             }
+         }
+
+         if (heldItem != null && (heldItem.getItem() == Items.GUNPOWDER))
+         {
+             if (heldItem.stackSize >= 4)
+             {
+            	 heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
+            	 return true;
+             }
+         }
+
+         if (heldItem != null && (heldItem.getItem() == Items.STRING))
+         {
+             if (heldItem.stackSize >= 4)
+             {
+            	 heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
+            	 return true;
+             }
+         }
+
+
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_1))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_2), true);
+            	 return true;
+         }
+
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_2))
+         {
+        	 	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_3), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_3))
+         {
+        	     heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_4), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_4))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_5), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_5))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_6), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_6))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_7), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_7))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_8), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_8))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_9), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_9))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeing_10), true);
+            	 return true;
+         }
+
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_10))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeKit), true);
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL,9), true);
+            	 return true;
+         }
 
          return true;
 	}
+
+
 }
 

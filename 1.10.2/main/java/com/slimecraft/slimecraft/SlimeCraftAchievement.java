@@ -41,18 +41,8 @@ public class SlimeCraftAchievement {
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondAxeX) {
-            e.getEntityPlayer().addStat(slimecraft.SlimeDiamondAxe_X);
-        }
-
-		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
                 && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondShovelX) {
             e.getEntityPlayer().addStat(slimecraft.SlimeDiamondShovel_X);
-        }
-
-		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
-                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.SlimeDiamondHoeX) {
-            e.getEntityPlayer().addStat(slimecraft.SlimeDiamondHoe_X);
         }
 
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
@@ -79,7 +69,7 @@ public class SlimeCraftAchievement {
                 && e.getItem().getEntityItem().getItem() == SlimeCraftItems.FoodCard) {
             e.getEntityPlayer().addStat(slimecraft.Low_performance_personal_computer);
         }
-		
+
 		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
                 && e.getItem().getEntityItem().getItem() == SlimeCraftItems.UltimateSlimeStaff) {
             e.getEntityPlayer().addStat(slimecraft.SlimeStaff);

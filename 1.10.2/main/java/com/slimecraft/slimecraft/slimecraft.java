@@ -150,9 +150,9 @@ public class slimecraft{
     public static Achievement SlimeDiamond_Sword;
     public static Achievement SlimeDiamond_X_Series;
     public static Achievement SlimeDiamondPickaxe_X;
-    public static Achievement SlimeDiamondAxe_X;
+    //public static Achievement SlimeDiamondAxe_X;
     public static Achievement SlimeDiamondShovel_X;
-    public static Achievement SlimeDiamondHoe_X;
+    //public static Achievement SlimeDiamondHoe_X;
     public static Achievement Pickaxe_Axe_Shovel_Hoe;
     public static Achievement MultiTool_Fortune;
     public static Achievement Welcome_to_ScienceClub;
@@ -160,6 +160,7 @@ public class slimecraft{
     public static Achievement Low_performance_personal_computer;
     public static Achievement SlimeStaff;
     public static Achievement Range_attack;
+    public static Achievement SlimeCraft_New_Crafting_System;
 
 
     //実績ページ追加
@@ -195,9 +196,9 @@ public class slimecraft{
             	SlimeDiamond_Sword = new Achievement("slimediamond_sword", "SlimeDiamond Sword!?", 6, 0, new ItemStack(SlimeCraftItems.SlimeDiamondSword),SlimeIron_Sword).registerStat();
             	SlimeDiamond_X_Series = new Achievement("slimediamond_x_series", "SlimeDiamond X-Series", 8, 0, new ItemStack(SlimeCraftItems.SlimeDiamondSwordX),SlimeDiamond_Sword).registerStat();
             	SlimeDiamondPickaxe_X = new Achievement("slimediamondpickaxe_x", "SlimeDiamond Pickaxe X", 8, -2, new ItemStack(SlimeCraftItems.SlimeDiamondPickaxeX),SlimeDiamond_X_Series).registerStat();
-            	SlimeDiamondAxe_X = new Achievement("slimediamondaxe_x", "SlimeDiamond Axe X", 8, -4, new ItemStack(SlimeCraftItems.SlimeDiamondAxeX),SlimeDiamond_X_Series).registerStat();
+            	//SlimeDiamondAxe_X = new Achievement("slimediamondaxe_x", "SlimeDiamond Axe X", 8, -4, new ItemStack(SlimeCraftItems.SlimeDiamondAxeX),SlimeDiamond_X_Series).registerStat();
             	SlimeDiamondShovel_X = new Achievement("slimediamondshovel_x", "SlimeDiamond Shovel X", 8, 2, new ItemStack(SlimeCraftItems.SlimeDiamondShovelX), SlimeDiamond_X_Series).registerStat();
-            	SlimeDiamondHoe_X = new Achievement("slimediamondhoe_x", "SlimeDiamond Hoe X", 8, 4, new ItemStack(SlimeCraftItems.SlimeDiamondHoeX),SlimeDiamond_X_Series).registerStat();
+            	//SlimeDiamondHoe_X = new Achievement("slimediamondhoe_x", "SlimeDiamond Hoe X", 8, 4, new ItemStack(SlimeCraftItems.SlimeDiamondHoeX),SlimeDiamond_X_Series).registerStat();
             	Pickaxe_Axe_Shovel_Hoe = new Achievement("pickaxe_axe_shovel_hoe", "Pickaxe&Axe&Shovel&Hoe?", 10, -2, new ItemStack(SlimeCraftItems.SlimeMultiTool), SlimeDiamond_X_Series).registerStat();
             	MultiTool_Fortune = new Achievement("multitool_fortune", "MultiTool+Fortune", 10, 2, new ItemStack(SlimeCraftItems.SlimeMultiToolFortune), SlimeDiamond_X_Series).registerStat();
 
@@ -206,13 +207,14 @@ public class slimecraft{
             	Low_performance_personal_computer = new Achievement("Low_performance_personal_computer", "Low_Performance_Personal_Computer", 4, 5, new ItemStack(SlimeCraftItems.FoodCard), null).registerStat();
 
             	SlimeStaff = new Achievement("slimestaff", "SlimeStaff", -5, 0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff), null).registerStat();
-            	Range_attack = new Achievement("range_attack", "Range Attack", -5, 2, new ItemStack(SlimeCraftItems.UltimateSlimeBall), SlimeStaff).registerStat();
-            	
-            	
+            	Range_attack = new Achievement("range_attack", "Range Attack", -7, 0, new ItemStack(SlimeCraftItems.UltimateSlimeBall), SlimeStaff).registerStat();
+
+            	SlimeCraft_New_Crafting_System = new Achievement("slimecraft_newcrafting_system", "SlimeCraft New Crafting System", -5, -4, new ItemStack(SlimeCraftBlocks.SlimeTable), null).registerStat();
+
             	//実績ページ？上の工程が出来たら最後に１行目の文に,で追加してね
             	SlimeCraft_Achievement = new AchievementPage("SlimeCraft",Welcome_to_SlimeCraft,Slime_Sword,SlimeIron_Sword,SlimeDiamond_Sword,
-            			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondAxe_X,SlimeDiamondHoe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub
-            			,EasyFood,Low_performance_personal_computer,SlimeStaff,Range_attack);
+            			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub
+            			,EasyFood,Low_performance_personal_computer,SlimeStaff,Range_attack,SlimeCraft_New_Crafting_System);
             	//↑です
             	AchievementPage.registerAchievementPage(SlimeCraft_Achievement);
 
@@ -648,7 +650,9 @@ public class slimecraft{
    GameRegistry.addRecipe(new ItemStack(SlimeCraftItems.UltimateSlimeStaff),
 		"QBS","EMB","SEQ",'S',SlimeCraftBlocks.CompactSlimeBlock_5,'M',SlimeCraftItems.SlimeMultiToolFortune
 		);
-
+   GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeTable),
+		"III","ICI","III",'I',SlimeCraftItems.SlimeIron,'C',Blocks.CRAFTING_TABLE
+		);
 
 
    GameRegistry.addSmelting(Items.SLIME_BALL, new ItemStack(SlimeCraftItems.SlimeMakekit_3), 1.0f);
