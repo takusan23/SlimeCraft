@@ -208,9 +208,9 @@ public class SlimeTable extends Block {
             	 return true;
          }
 
-         return true;
-	}
+   		return true;
 
+	}
 
 }
 

@@ -161,6 +161,8 @@ public class slimecraft{
     public static Achievement SlimeStaff;
     public static Achievement Range_attack;
     public static Achievement SlimeCraft_New_Crafting_System;
+    public static Achievement SlimeXpTable;
+    public static Achievement SlimeExchangeTable;
 
 
     //実績ページ追加
@@ -210,11 +212,13 @@ public class slimecraft{
             	Range_attack = new Achievement("range_attack", "Range Attack", -7, 0, new ItemStack(SlimeCraftItems.UltimateSlimeBall), SlimeStaff).registerStat();
 
             	SlimeCraft_New_Crafting_System = new Achievement("slimecraft_newcrafting_system", "SlimeCraft New Crafting System", -5, -4, new ItemStack(SlimeCraftBlocks.SlimeTable), null).registerStat();
+            	SlimeXpTable = new Achievement("slimexptable", "Slime XpTable", -7, -5, new ItemStack(SlimeCraftBlocks.SlimeXpTable), SlimeCraft_New_Crafting_System).registerStat();
+            	SlimeExchangeTable = new Achievement("slimeexchangetable", "Slime ExchangeTable", -3, -5, new ItemStack(SlimeCraftBlocks.SlimeExchangeTable), SlimeCraft_New_Crafting_System).registerStat();
 
             	//実績ページ？上の工程が出来たら最後に１行目の文に,で追加してね
             	SlimeCraft_Achievement = new AchievementPage("SlimeCraft",Welcome_to_SlimeCraft,Slime_Sword,SlimeIron_Sword,SlimeDiamond_Sword,
             			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub
-            			,EasyFood,Low_performance_personal_computer,SlimeStaff,Range_attack,SlimeCraft_New_Crafting_System);
+            			,EasyFood,Low_performance_personal_computer,SlimeStaff,Range_attack,SlimeCraft_New_Crafting_System,SlimeXpTable,SlimeExchangeTable);
             	//↑です
             	AchievementPage.registerAchievementPage(SlimeCraft_Achievement);
 

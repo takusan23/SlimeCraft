@@ -34,6 +34,8 @@ public class SlimeCraftBlocks {
     public static Block CompactSlimeBlock_4;
     public static Block CompactSlimeBlock_5;
     public static Block SlimeTable;
+    public static Block SlimeXpTable;
+    public static Block SlimeExchangeTable;
 
 
 
@@ -61,8 +63,10 @@ public class SlimeCraftBlocks {
 		CompactSlimeBlock_2 = new compactslimeblock_2();
 		CompactSlimeBlock_3 = new compactslimeblock_3();
 		CompactSlimeBlock_4 = new compactslimeblock_4();
-		CompactSlimeBlock_5 = new compactslimeblock_5();		
+		CompactSlimeBlock_5 = new compactslimeblock_5();
 		SlimeTable = new SlimeTable();
+		SlimeXpTable = new SlimeXpTable();
+		SlimeExchangeTable = new SlimeExchangeTable();
 	}
 	public static void register() {
 		registerBlock(SlimeIronBlock);
@@ -90,6 +94,8 @@ public class SlimeCraftBlocks {
 		registerBlock(CompactSlimeBlock_4);
 		registerBlock(CompactSlimeBlock_5);
 		registerBlock(SlimeTable);
+		registerBlock(SlimeXpTable);
+		registerBlock(SlimeExchangeTable);
 
 	}
 
@@ -127,6 +133,8 @@ public class SlimeCraftBlocks {
 		regiserRender(CompactSlimeBlock_4);
 		regiserRender(CompactSlimeBlock_5);
 		regiserRender(SlimeTable);
+		regiserRender(SlimeXpTable);
+		regiserRender(SlimeExchangeTable);
 	}
 
 	public static void regiserRender(net.minecraft.block.Block block) {
