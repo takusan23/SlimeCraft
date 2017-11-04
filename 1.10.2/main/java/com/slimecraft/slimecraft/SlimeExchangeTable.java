@@ -26,7 +26,7 @@ public class SlimeExchangeTable extends Block {
 	public SlimeExchangeTable() {
         super(Material.ROCK);
         setCreativeTab(slimecraft.SlimeCraftTab);
-        setRegistryName("slimeexchanhetable");
+        setRegistryName("slimeexchangetable");
         setUnlocalizedName("Slime ExchangeTable");
         setHardness(5.0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));

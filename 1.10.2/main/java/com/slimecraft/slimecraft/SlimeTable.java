@@ -207,6 +207,15 @@ public class SlimeTable extends Block {
             	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL,9), true);
             	 return true;
          }
+                 
+         if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_10))
+         {
+             	 heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMakeKit), true);
+            	 playerIn.dropItem(new ItemStack(Items.SLIME_BALL,9), true);
+            	 return true;
+         }
+                 
 
    		return true;
 

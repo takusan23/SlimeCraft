@@ -657,6 +657,9 @@ public class slimecraft{
    GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeTable),
 		"III","ICI","III",'I',SlimeCraftItems.SlimeIron,'C',Blocks.CRAFTING_TABLE
 		);
+   GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeXpTable),
+		"IDI","DED","IDI",'I',SlimeCraftItems.SlimeIron,'D',SlimeCraftItems.SlimeDiamond,'E',Blocks.ENCHANTING_TABLE
+		);
 
 
    GameRegistry.addSmelting(Items.SLIME_BALL, new ItemStack(SlimeCraftItems.SlimeMakekit_3), 1.0f);

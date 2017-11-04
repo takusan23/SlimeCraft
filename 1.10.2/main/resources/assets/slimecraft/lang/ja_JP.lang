@@ -89,6 +89,8 @@ tile.Compact SlimeBlock 4.name=圧縮スライムブロック 4
 tile.Compact SlimeBlock 5.name=圧縮スライムブロック 5
 
 tile.Slime Table.name=スライム作業台
+tile.Slime XpTable.name=スライム経験値変換テーブル
+tile.Slime ExchangeTable.name=スライム　アイテム変換テーブル
 
 achievement.Welcome to SlimeCraft.desc=ようこそスライムクラフトへ
 achievement.Welcome to SlimeCraft=ゆっくりしていってね！
@@ -124,5 +126,9 @@ achievement.Range Attack=範囲攻撃をさらに便利に
 achievement.Range Attack.desc=エンダーマンにもダメージを与えます
 achievement.SlimeCraft New Crafting System=スライムクラフトの新しいクラフティングシステム
 achievement.SlimeCraft New Crafting System.desc=右クリック
+achievement.Slime XpTable=スライム経験値変換テーブル
+achievement.Slime XPTable.desc=スライムボールを経験値に変換できます
+achievement.Slime ExchangeTable=スライム　アイテム変換変換テーブル
+achievement.Slime ExchangeTable.desc=いくつかのアイテムを変換できるよ
 achievement
 achievement

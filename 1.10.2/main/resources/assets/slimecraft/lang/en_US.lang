@@ -90,6 +90,8 @@ tile.Compact SlimeBlock 4.name=Compact SlimeBlock 4
 tile.Compact SlimeBlock 5.name=Compact SlimeBlock 5
 
 tile.Slime Table.name=Slime Table
+tile.Slime XPTable.name=Slime XpTable
+tile.Slime ExchangeTable.name=Slime ExchangeTable
 
 achievement.Welcome to SlimeCraft.desc=Achievement is achieved when picking up an item
 achievement.Welcome to SlimeCraft=Welcome to SlimeCraft
@@ -125,8 +127,8 @@ achievement.Range Attack=Make range attack even more convenient
 achievement.Range Attack.desc=Even damage to the enderman!
 achievement.SlimeCraft New Crafting System=SlimeCraft New Crafting System
 achievement.SlimeCraft New Crafting System.desc=Right Click
-achievement
-achievement
-achievement
-achievement
+achievement.Slime XpTable=Slime XpTable
+achievement.Slime XpTable.desc=SlimeBall Experience
+achievement.Slime ExchangeTable=Slime ExchangeTable
+achievement.Slime ExchangeTable.desc=Item Exchange
 achievement

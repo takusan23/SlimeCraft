@@ -76,17 +76,25 @@ public class SlimeXpTable extends Block {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem,EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 		playerIn.addStat(slimecraft.SlimeXpTable);
-
 		//スライムボールから経験値へ
-         if (heldItem != null && (heldItem.getItem() == Items.SLIME_BALL))
-         {
-        	 heldItem.stackSize--;
+        if (heldItem != null && (heldItem.getItem() == Items.SLIME_BALL))
+        {
+        	heldItem.stackSize--;
              if (!worldIn.isRemote)
              {
-                     int i = 3;
                      playerIn.worldObj.spawnEntityInWorld(new EntityXPOrb(playerIn.worldObj, playerIn.posX, playerIn.posY, playerIn.posZ, 5));
              }
-         }
+        }
+        
+        if (heldItem != null && (heldItem.getItem() == Items.ENCHANTED_BOOK))
+        {
+        	heldItem.stackSize--;
+             if (!worldIn.isRemote)
+             {
+                     playerIn.worldObj.spawnEntityInWorld(new EntityXPOrb(playerIn.worldObj, playerIn.posX, playerIn.posY, playerIn.posZ, 10));
+             }
+        }
+
          return true;
    }
 
