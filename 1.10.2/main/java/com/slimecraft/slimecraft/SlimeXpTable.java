@@ -85,7 +85,7 @@ public class SlimeXpTable extends Block {
                      playerIn.worldObj.spawnEntityInWorld(new EntityXPOrb(playerIn.worldObj, playerIn.posX, playerIn.posY, playerIn.posZ, 5));
              }
         }
-        
+
         if (heldItem != null && (heldItem.getItem() == Items.ENCHANTED_BOOK))
         {
         	heldItem.stackSize--;
@@ -94,8 +94,7 @@ public class SlimeXpTable extends Block {
                      playerIn.worldObj.spawnEntityInWorld(new EntityXPOrb(playerIn.worldObj, playerIn.posX, playerIn.posY, playerIn.posZ, 10));
              }
         }
-
          return true;
-   }
+	}
 
 }

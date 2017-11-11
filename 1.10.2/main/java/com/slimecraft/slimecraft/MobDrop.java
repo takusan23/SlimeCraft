@@ -14,7 +14,7 @@ public class MobDrop {
 		}
 		if(event.getEntityLiving() instanceof EntitySlime) {
 			if(event.getEntityLiving().worldObj.rand.nextInt(5) == 0) {
-				event.getEntityLiving().entityDropItem(new ItemStack(SlimeCraftBlocks.SlimeTrophy), 0);
+				event.getEntityLiving().entityDropItem(new ItemStack(SlimeCraftBlocks.SlimeTrophy,1), 0);
 			}
 			}
 			}
