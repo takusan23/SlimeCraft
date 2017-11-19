@@ -36,6 +36,9 @@ public class SlimeCraftBlocks {
     public static Block SlimeTable;
     public static Block SlimeXpTable;
     public static Block SlimeExchangeTable;
+    public static Block UltimateBallBlock;
+    public static Block SlimeMatterBlock;
+
 
 
 
@@ -67,6 +70,8 @@ public class SlimeCraftBlocks {
 		SlimeTable = new SlimeTable();
 		SlimeXpTable = new SlimeXpTable();
 		SlimeExchangeTable = new SlimeExchangeTable();
+		UltimateBallBlock = new UltimateBallBlock();
+		SlimeMatterBlock = new SlimeMatterBlock();
 	}
 	public static void register() {
 		registerBlock(SlimeIronBlock);
@@ -96,6 +101,8 @@ public class SlimeCraftBlocks {
 		registerBlock(SlimeTable);
 		registerBlock(SlimeXpTable);
 		registerBlock(SlimeExchangeTable);
+		registerBlock(UltimateBallBlock);
+		registerBlock(SlimeMatterBlock);
 
 	}
 
@@ -135,6 +142,8 @@ public class SlimeCraftBlocks {
 		regiserRender(SlimeTable);
 		regiserRender(SlimeXpTable);
 		regiserRender(SlimeExchangeTable);
+		regiserRender(UltimateBallBlock);
+		regiserRender(SlimeMatterBlock);
 	}
 
 	public static void regiserRender(net.minecraft.block.Block block) {

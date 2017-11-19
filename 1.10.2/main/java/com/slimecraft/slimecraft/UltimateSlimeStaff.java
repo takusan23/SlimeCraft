@@ -179,20 +179,79 @@ public class UltimateSlimeStaff extends ItemTool{
 		                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
 		                            return EnumActionResult.SUCCESS;
 		                    }
+		                	}
+		            	}
+		                //UltimateSlimeBall変換
+		                if (block == SlimeCraftBlocks.SlimeTrophy)
+		                {
+		    	        	playerIn.dropItem(new ItemStack(SlimeCraftItems.UltimateSlimeBall), true);
+		    	        	worldIn.destroyBlock(pos, false);
+		    	        	playerIn.addStat(slimecraft.SlimeTrophy_New_usage);
 		                }
-		            }
+		                //SlimeMatter変換
+		                if (block == SlimeCraftBlocks.SlimeMatterBlock)
+		                {
+		    	        	playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMatter), true);
+		    	        	worldIn.destroyBlock(pos, false);
+		    	        	playerIn.addStat(slimecraft.SlimeTrophy_New_usage);
+		                }
+
+		    	        if(playerIn.isSneaking()) {
+		    	        	if(block == Blocks.STONE)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeDrill));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.COBBLESTONE)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeDrill));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.LOG)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeChainsaw));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.LOG2)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeChainsaw));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.PLANKS)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeChainsaw));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.DIRT)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeHoe));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.GRASS_PATH)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeHoe));
+		    	        		--stack.stackSize;
+		          			}
+		    	        	if(block == Blocks.FARMLAND)
+		          			{
+		    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeHoe));
+		    	        		--stack.stackSize;
+		          			}
+
+
+
+
+
+		    	        }
+
 		            else
-		            {
-		                return EnumActionResult.PASS;
-		            }
+		         	{
+		        	 return EnumActionResult.PASS;
+		         	}
 
 		        }
-			return null;
+			 return null;
 		    }
-
-
-
-
 
 	      public float getStrVsBlock(ItemStack stack, Block block) {
 
@@ -256,7 +315,7 @@ public class UltimateSlimeStaff extends ItemTool{
 	              worldIn.spawnEntityInWorld(entityUltimateSlimeBallBall);
 	          }
 	          playerIn.addStat(slimecraft.Range_attack);
-	          
+
 	          playerIn.addStat(StatList.getObjectUseStats(this));
 	          return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
 	      }
@@ -275,8 +334,8 @@ public class UltimateSlimeStaff extends ItemTool{
 
 				 }
 	   }
-	      
-	      
+
+
 
 /*
      public boolean attackEntityFrom(DamageSource source, float amount)

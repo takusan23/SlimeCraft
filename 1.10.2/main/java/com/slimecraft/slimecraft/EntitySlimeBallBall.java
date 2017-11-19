@@ -56,7 +56,7 @@ public class EntitySlimeBallBall extends EntityThrowable{
 
             if (result.entityHit instanceof EntitySlime)
             {
-            	entityDropItem(new ItemStack(Blocks.SLIME_BLOCK), (float)getYOffset());
+            	entityDropItem(new ItemStack(Blocks.SLIME_BLOCK,1), (float)getYOffset());
             }
 
             //友好MOB、プレイヤー、etc

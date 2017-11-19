@@ -33,13 +33,19 @@ item.SlimeIron Shovel.name=鉄スライムのシャベル
 
 item.Slime MultiTool.name=スライムマルチツール
 item.Slime MultiTool(Fortune).name=スライムマルチツール(幸運)
-item.Ultimate SlimeStaff.name=スライムスタッフ
+item.Ultimate SlimeStaff.name=アルティメットスライムスタッフ
+item.Ultimate SlimeDrill.name=アルティメットスライムドリル
+item.Slime Matter.name=スライムマター
+item.Ultimate SlimeChainsaw.name=アルティメットスライムチェーンソー
+item.Ultimate SlimeHoe.name=アルティメットスライムのクワ
 
 tile.SlimeIron Block.name=鉄スライムブロック
 tile.SlimeDiamond Block.name=ダイヤスライムブロック
 tile.SlimeTrophy.name=スライムトロフィー
 tile.SlimeLamp.name=スライムランプ
 tile.SlimeLamp_light.name=光っているスライムランプ
+tile.UltimateBall Block.name=アルティメットボールブロック
+tile.SlimeMatter Block.name=スライムマターブロック
 
 item.Potion Card.name=ポーションカード
 item.Speed Card.name=移動速度上昇カード
@@ -130,5 +136,8 @@ achievement.Slime XpTable=スライム経験値変換テーブル
 achievement.Slime XPTable.desc=スライムボールを経験値に変換できます
 achievement.Slime ExchangeTable=スライム　アイテム変換変換テーブル
 achievement.Slime ExchangeTable.desc=いくつかのアイテムを変換できるよ
-achievement
+achievement.Slime Matter=スライムマター
+achievement.Slime Matter.desc=スライムスタッフを持ってスライムマターブロックを右クリック！
+achievement.SlimeTrophy New usage=スライムトロフィーの新しい使いみち
+achievement.SlimeTrophy New usage.desc=スライムスタッフを持ってスライムトロフィーを右クリック！
 achievement

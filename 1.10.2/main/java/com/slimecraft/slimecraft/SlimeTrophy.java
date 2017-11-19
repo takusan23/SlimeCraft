@@ -1,7 +1,5 @@
 package com.slimecraft.slimecraft;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -9,10 +7,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -43,12 +38,6 @@ public class SlimeTrophy extends Block {
     {
         return false;
     }
-
-		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
-	    {
-	        return worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos) && worldIn.getBlockState(pos.down()).isSideSolid(worldIn, pos, EnumFacing.UP);
-	    }
-
 
 	    public IBlockState withRotation(IBlockState state, Rotation rot)
 	    {
@@ -87,26 +76,5 @@ public class SlimeTrophy extends Block {
 	    static {
 			FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 		}
-	    
-	    
-		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem,EnumFacing side, float hitX, float hitY, float hitZ)
-		{
-			playerIn.addStat(slimecraft.SlimeXpTable);
-			//スライムボールから経験値へ
-	        if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.UltimateSlimeStaff))
-	        {
-	        	playerIn.dropItem(new ItemStack(SlimeCraftItems.UltimateSlimeBall), true);
-	        	worldIn.destroyBlock(pos, false);
-	        	
-	        }
-			return true;
-		}
-		
-		
+
 	}
-
-
-	    //
-
-
-	

@@ -32,14 +32,23 @@ item.SlimeIron Shovel.name=SlimeIron Shovel
 item.Slime MultiTool.name=Slime MultiTool
 tile.SlimeCraft End Contents.name=SlimeCraft End Contents
 item.Slime MultiTool(Fortune).name=Slime MultiTool(Fortune)
+
 item.Ultimate SlimeStaff.name=Ultimate SlimeStaff
+item.Ultimate SlimeDrill.name=Ultimate SlimeDrill
+item.Ultimate SlimeChainsaw.name=Ultimate SlimeChainsaw
+item.Ultimate SlimeHoe.name=Ultimate SlimeHoe
+
 item.Ultimate SlimeBall.name=Ultimate SlimeBall
+item.Slime Matter.name=Slime Matter
+
 
 tile.SlimeIron Block.name=SlimeIron Block
 tile.SlimeDiamond Block.name=SlimeDiamond Block
 tile.SlimeTrophy.name=Slime Trophy
 tile.SlimeLamp.name=Slime Lamp
 tile.SlimeLamp_light.name=Slime Lamp(Light)
+tile.UltimateBall Block.name=UltimateBall Block
+tile.SlimeMatter Block.name=SlimeMatter Block
 
 item.Potion Card.name=Potion Card
 item.Speed Card.name=Speed Card
@@ -131,4 +140,17 @@ achievement.Slime XpTable=Slime XpTable
 achievement.Slime XpTable.desc=SlimeBall Experience
 achievement.Slime ExchangeTable=Slime ExchangeTable
 achievement.Slime ExchangeTable.desc=Item Exchange
+achievement.Slime Matter=Slime Matter
+achievement.Slime Matter.desc=Right-Click the SlimeMatter Block with the Ultimate SlimeStaff
+achievement.SlimeTrophy New usage=SlimeTrophy New usage
+achievement.SlimeTrophy New usage.desc=Right-Click the SlimeTrophy with the Ultimate SlimeStaff
+achievement
+achievement
+achievement
+achievement
+achievement
+achievement
+achievement
+achievement
+achievement
 achievement
