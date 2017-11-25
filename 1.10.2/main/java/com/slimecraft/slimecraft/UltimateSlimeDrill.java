@@ -56,6 +56,11 @@ public class UltimateSlimeDrill extends ItemTool {
 		        		playerIn.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
 		        }
+	        	if(block == Blocks.BEDROCK)
+      			{
+	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
+	        		--stack.stackSize;
+      			}
 
 		        	if(block != Blocks.BEDROCK)
 		        	{

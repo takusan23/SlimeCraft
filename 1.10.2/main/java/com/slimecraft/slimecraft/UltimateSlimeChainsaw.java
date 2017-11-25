@@ -60,6 +60,11 @@ public class UltimateSlimeChainsaw extends ItemTool {
 		        		//playerIn.inventory.setInventorySlotContents(0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		playerIn.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
+    	        	if(block == Blocks.BEDROCK)
+          			{
+    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
+    	        		--stack.stackSize;
+          			}
 
 
 		        }

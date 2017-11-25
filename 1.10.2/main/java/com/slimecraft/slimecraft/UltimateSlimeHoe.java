@@ -92,12 +92,18 @@ public class UltimateSlimeHoe extends ItemTool {
 	          			{
 	    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 	    	        		--stack.stackSize;
-	          			}	
+	          			}
 	    	        	if(block == Blocks.FARMLAND)
 	          			{
 	    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 	    	        		--stack.stackSize;
-	          			}	    	        	
+	          			}
+	    	        	if(block == Blocks.BEDROCK)
+	          			{
+	    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
+	    	        		--stack.stackSize;
+	          			}
+
 
 	    	        }
 	                        if (!worldIn.isRemote)
@@ -121,13 +127,13 @@ public class UltimateSlimeHoe extends ItemTool {
 	                        }
 
 	          			}
-		        
+
 			return null;
 
 	    	        }
-		        
 
-			 
+
+
 
 	      protected void setBlock(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, IBlockState state)
 	      {
