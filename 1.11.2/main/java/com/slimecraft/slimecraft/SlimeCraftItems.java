@@ -45,16 +45,22 @@ public class SlimeCraftItems {
     public static Item SlimeDiamond;
     public static Item SlimeCookie;
     public static Item GlassStick;
+    public static Item UltimateSlimeBall;
+    public static Item SlimeMatter;
     public static Block SlimeIronBlock;
     public static Block SlimeDiamondBlock;
     public static Block SlimeTrophy;
     public static Block SlimeLamp;
     public static Block SlimeLamp_Light;
 
-
     //マルチツール
     public static Item SlimeMultiTool;
     public static Item SlimeMultiToolFortune;
+    //staff
+    public static Item UltimateSlimeStaff;
+    public static Item UltimateSlimeDrill;
+    public static Item UltimateSlimeChainsaw;
+    public static Item UltimateSlimeHoe;
     //ポーションカード
     public static Item PotionCard;
     public static Item SpeedCard;
@@ -87,6 +93,7 @@ public class SlimeCraftItems {
  	public static ToolMaterial Dia_SLIME;
     public static ToolMaterial Iron_Slime;
     public static ToolMaterial SlimeTool;
+    public static ToolMaterial UltimateTool;
 
 
 
@@ -99,11 +106,15 @@ public class SlimeCraftItems {
 
 		Iron_Slime = EnumHelper.addToolMaterial("Slime Iron", 2, 512, 6.0F, 1.5F, 10)
 				.setRepairItem(new ItemStack(SlimeCraftItems.SlimeIron));
+		UltimateTool = EnumHelper.addToolMaterial("UltimateTool", 5, 0, 80.0F, 80.0F, 30)
+				.setRepairItem(new ItemStack(SlimeCraftItems.SlimeDiamond));
 
 		SlimeDiamond = new Item().setUnlocalizedName("Slime Diamond").setCreativeTab(slimecraft.SlimeCraftTab);
 		SlimeIron = new Item().setUnlocalizedName("Slime Iron Ingot").setCreativeTab(slimecraft.SlimeCraftTab);
 		SlimeCookie = new SlimeCookie(10, false);
 		GlassStick = new Item().setUnlocalizedName("Glass Stick").setCreativeTab(slimecraft.SlimeCraftTab);
+		UltimateSlimeBall = new Item().setUnlocalizedName("Ultimate SlimeBall").setCreativeTab(slimecraft.SlimeCraftTab);
+		SlimeMatter = new Item().setUnlocalizedName("Slime Matter").setCreativeTab(slimecraft.SlimeCraftTab);
 		//sword
 		SlimeSword = new ItemSword(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Sword").setMaxDamage(256);
 		SlimeIronSword = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
@@ -132,6 +143,11 @@ public class SlimeCraftItems {
         //multitool
         SlimeMultiTool = new SlimeMultiTool(SlimeCraftItems.SlimeTool).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime MultiTool");
         SlimeMultiToolFortune = new SlimeMultiToolFortune(SlimeCraftItems.SlimeTool).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime MultiTool(Fortune)");
+        //slimestuff
+        UltimateSlimeStaff = new UltimateSlimeStaff(SlimeCraftItems.UltimateTool).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Ultimate SlimeStaff");
+        UltimateSlimeDrill = new UltimateSlimeDrill(SlimeCraftItems.UltimateTool).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Ultimate SlimeDrill");
+        UltimateSlimeChainsaw = new UltimateSlimeChainsaw(SlimeCraftItems.UltimateTool).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Ultimate SlimeChainsaw");
+        UltimateSlimeHoe = new UltimateSlimeHoe(SlimeCraftItems.UltimateTool).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Ultimate SlimeHoe");
         //potioncard
         PotionCard = new Item().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Potion Card");
         SpeedCard = new SpeedCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Speed Card").setMaxStackSize(1);
@@ -168,6 +184,8 @@ public class SlimeCraftItems {
 		registerItem(SlimeIron,"slimeiron");
 		registerItem(SlimeCookie,"slimecookie");
 		registerItem(GlassStick, "glassstick");
+		registerItem(UltimateSlimeBall, "ultimateslimeball");
+		registerItem(SlimeMatter, "slimematter");
 		//sword
 		registerItem(SlimeSword, "slimesword");
 		registerItem(SlimeIronSword, "slimeironsword");
@@ -196,6 +214,11 @@ public class SlimeCraftItems {
 		//multitool
 		registerItem(SlimeMultiTool, "slimemultitool");
 		registerItem(SlimeMultiToolFortune, "slimemultitoolfortune");
+		//staff
+		registerItem(UltimateSlimeStaff, "ultimateslimestaff");
+		registerItem(UltimateSlimeDrill, "ultimateslimedrill");
+		registerItem(UltimateSlimeChainsaw, "ultimateslimechainsaw");
+		registerItem(UltimateSlimeHoe, "ultimateslimehoe");
 		//potioncard
 		registerItem(PotionCard, "potioncard");
 		registerItem(SpeedCard, "speedcard");
@@ -235,6 +258,8 @@ public class SlimeCraftItems {
 		registerRender(SlimeIron);
 		registerRender(SlimeCookie);
 		registerRender(GlassStick);
+		registerRender(UltimateSlimeBall);
+		registerRender(SlimeMatter);
 		//sword
 		registerRender(SlimeSword);
 		registerRender(SlimeIronSword);
@@ -263,6 +288,11 @@ public class SlimeCraftItems {
 		//multitool
 		registerRender(SlimeMultiTool);
 		registerRender(SlimeMultiToolFortune);
+		//staff
+		registerRender(UltimateSlimeStaff);
+		registerRender(UltimateSlimeDrill);
+		registerRender(UltimateSlimeChainsaw);
+		registerRender(UltimateSlimeHoe);
 		//potioncard
 		registerRender(PotionCard);
 		registerRender(SpeedCard);

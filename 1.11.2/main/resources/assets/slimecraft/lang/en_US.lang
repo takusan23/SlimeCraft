@@ -9,9 +9,6 @@ item.Slime Iron Ingot.name=Slime Iron
 item.Slime Cookie.name=Slime Cookie
 item.Glass Stick.name=Glass Stick
 
-
-
-
 item.Slime Pickaxe.name=Slime Pickaxe
 item.SlimeIron Pickaxe.name=SlimeIron Pickaxe
 item.SlimeDiamond Pickaxe.name=SlimeDiamond Pickaxe
@@ -36,11 +33,22 @@ item.Slime MultiTool.name=Slime MultiTool
 tile.SlimeCraft End Contents.name=SlimeCraft End Contents
 item.Slime MultiTool(Fortune).name=Slime MultiTool(Fortune)
 
+item.Ultimate SlimeStaff.name=Ultimate SlimeStaff
+item.Ultimate SlimeDrill.name=Ultimate SlimeDrill
+item.Ultimate SlimeChainsaw.name=Ultimate SlimeChainsaw
+item.Ultimate SlimeHoe.name=Ultimate SlimeHoe
+
+item.Ultimate SlimeBall.name=Ultimate SlimeBall
+item.Slime Matter.name=Slime Matter
+
+
 tile.SlimeIron Block.name=SlimeIron Block
 tile.SlimeDiamond Block.name=SlimeDiamond Block
 tile.SlimeTrophy.name=Slime Trophy
 tile.SlimeLamp.name=Slime Lamp
 tile.SlimeLamp_light.name=Slime Lamp(Light)
+tile.UltimateBall Block.name=UltimateBall Block
+tile.SlimeMatter Block.name=SlimeMatter Block
 
 item.Potion Card.name=Potion Card
 item.Speed Card.name=Speed Card
@@ -90,8 +98,11 @@ tile.Compact SlimeBlock 3.name=Compact SlimeBlock 3
 tile.Compact SlimeBlock 4.name=Compact SlimeBlock 4
 tile.Compact SlimeBlock 5.name=Compact SlimeBlock 5
 
+tile.Slime Table.name=Slime Table
+tile.Slime XPTable.name=Slime XpTable
+tile.Slime ExchangeTable.name=Slime ExchangeTable
 
-achievement.Welcome to SlimeCraft.desc=Welcome to SlimeCraft
+achievement.Welcome to SlimeCraft.desc=Achievement is achieved when picking up an item
 achievement.Welcome to SlimeCraft=Welcome to SlimeCraft
 achievement.Slime Sword=Slime Sword
 achievement.Slime Sword.desc=Slime Sword
@@ -112,13 +123,34 @@ achievement.SlimeDiamond Hoe X.desc=SlimeDiamond Hoe X
 achievement.Pickaxe&Axe&Shovel&Hoe?=Pickaxe&Axe&Shovel&Hoe?
 achievement.Pickaxe&Axe&Shovel&Hoe?.desc=Pickaxe&Axe&Shovel&Hoe?
 achievement.MultiTool+Fortune=MultiTool+Fortune
-achievement.MultiTool+Fortune.desc=MultiTool+Fortune
+achievement.MultiTool+Fortune.desc=ReinforcedTools　is useful!
 achievement.Welcome to ScienceClub!=Welcome to ScienceClub!
 achievement.Welcome to ScienceClub!.desc=Welcome to ScienceClub!
 achievement.Easy_Food=Easy Food
 achievement.Easy_Food.desc=Easy Food
 achievement.Low_Performance_Personal_Computer=Low Performance Personal Computer
 achievement.Low_Performance_Personal_Computer.desc=Low Performance Personal Computer
+achievement.SlimeStaff=It became more convenient
+achievement.SlimeStaff.desc=Maybe this is the end content
+achievement.Range Attack=Make range attack even more convenient
+achievement.Range Attack.desc=Even damage to the enderman!
+achievement.SlimeCraft New Crafting System=SlimeCraft New Crafting System
+achievement.SlimeCraft New Crafting System.desc=Right Click
+achievement.Slime XpTable=Slime XpTable
+achievement.Slime XpTable.desc=SlimeBall Experience
+achievement.Slime ExchangeTable=Slime ExchangeTable
+achievement.Slime ExchangeTable.desc=Item Exchange
+achievement.Slime Matter=Slime Matter
+achievement.Slime Matter.desc=Right-Click the SlimeMatter Block with the Ultimate SlimeStaff
+achievement.SlimeTrophy New usage=SlimeTrophy New usage
+achievement.SlimeTrophy New usage.desc=Right-Click the SlimeTrophy with the Ultimate SlimeStaff
+achievement
+achievement
+achievement
+achievement
+achievement
+achievement
+achievement
 achievement
 achievement
 achievement

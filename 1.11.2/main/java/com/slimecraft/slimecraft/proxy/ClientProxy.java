@@ -1,10 +1,12 @@
 package com.slimecraft.slimecraft.proxy;
 
 import com.slimecraft.slimecraft.EntitySlimeBallBall;
+import com.slimecraft.slimecraft.EntityUltimateSlimeBallBall;
 import com.slimecraft.slimecraft.SlimeBallBallRender;
 import com.slimecraft.slimecraft.SlimeCraftBlocks;
 import com.slimecraft.slimecraft.SlimeCraftEntity;
 import com.slimecraft.slimecraft.SlimeCraftItems;
+import com.slimecraft.slimecraft.UltimateSlimeBallBallRender;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
@@ -38,7 +40,7 @@ public class ClientProxy extends CommonProxy{
 		 RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
 		 RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		 RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new SlimeBallBallRender(renderManager, Items.SLIME_BALL, renderItem));
-
+		 RenderingRegistry.registerEntityRenderingHandler(EntityUltimateSlimeBallBall.class, new UltimateSlimeBallBallRender(renderManager, SlimeCraftItems.UltimateSlimeBall, renderItem));
 
 	}
 
@@ -57,6 +59,7 @@ public class ClientProxy extends CommonProxy{
 		 RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
 		 RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		 RenderingRegistry.registerEntityRenderingHandler(EntitySlimeBallBall.class, new SlimeBallBallRender(renderManager, Items.SLIME_BALL, renderItem));
+		 RenderingRegistry.registerEntityRenderingHandler(EntityUltimateSlimeBallBall.class, new UltimateSlimeBallBallRender(renderManager,SlimeCraftItems.UltimateSlimeBall, renderItem));
 
 	 }
 }

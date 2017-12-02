@@ -1,7 +1,5 @@
 package com.slimecraft.slimecraft;
 
-
-
 import com.slimecraft.slimecraft.proxy.CommonProxy;
 
 import net.minecraft.creativetab.CreativeTabs;
