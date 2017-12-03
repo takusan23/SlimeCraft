@@ -112,7 +112,7 @@ public class SlimeCraftItems {
 		SlimeMatter = new Item().setUnlocalizedName("Slime Matter").setCreativeTab(slimecraft.SlimeCraftTab);
 		//sword
 		SlimeSword = new ItemSword(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Sword").setMaxDamage(256);
-		SlimeIronSword = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
+		SlimeIronSword = new ItemSword(ToolMaterial.IRON).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
 		SlimeDiamondSword = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Sword");
 		SlimeDiamondSwordX = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Sword X");
 		//pickaxe
