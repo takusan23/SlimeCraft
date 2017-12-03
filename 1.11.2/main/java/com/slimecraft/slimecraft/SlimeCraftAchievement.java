@@ -68,6 +68,11 @@ public class SlimeCraftAchievement {
             e.getEntityPlayer().addStat(slimecraft.Welcome_to_ScienceClub);
         }
 
+		if (e.getEntityPlayer() != null && e.getItem() != null && e.getItem().getEntityItem() != null
+                && e.getItem().getEntityItem().getItem() == SlimeCraftItems.UltimateSlimeStaff) {
+            e.getEntityPlayer().addStat(slimecraft.SlimeStaff);
+        }
+
 
 
 

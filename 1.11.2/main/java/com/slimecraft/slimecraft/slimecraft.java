@@ -29,7 +29,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class slimecraft{
     public static final String MOD_ID = "slimecraft";
     public static final String MOD_NAME = "SlimeCraft";
-    public static final String MOD_VERSION = "1.3";
+    public static final String MOD_VERSION = "2.0";
     public static final String MOD_DEPENDENCIES ="required-after:forge@[1.11.2-13.20.1.2386,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.11.2]";
     public static final String CLIENT_PROXY_CLASS = "com.slimecraft.slimecraft.proxy.ClientProxy";
@@ -150,7 +150,15 @@ public class slimecraft{
     public static Achievement Welcome_to_ScienceClub;
     public static Achievement EasyFood;
     public static Achievement Low_performance_personal_computer;
+    public static Achievement SlimeStaff;
+    public static Achievement Range_attack;
+    public static Achievement SlimeCraft_New_Crafting_System;
+    public static Achievement SlimeXpTable;
+    public static Achievement SlimeExchangeTable;
+    public static Achievement SlimeMatter;
+    public static Achievement SlimeTrophy_New_usage;
 
+    
     //実績ページ追加
     public static  AchievementPage SlimeCraft_Achievement;
 
@@ -290,10 +298,20 @@ public class slimecraft{
         	EasyFood = new Achievement("easyfood", "Easy_Food", 2, 5, new ItemStack(SlimeCraftItems.SlimeCookie),null).registerStat();
         	Low_performance_personal_computer = new Achievement("Low_performance_personal_computer", "Low_Performance_Personal_Computer", 4, 5, new ItemStack(SlimeCraftItems.FoodCard), null).registerStat();
 
+        	SlimeStaff = new Achievement("slimestaff", "SlimeStaff", -5, 0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff), null).registerStat();
+        	Range_attack = new Achievement("range_attack", "Range Attack", -3, 0, new ItemStack(SlimeCraftItems.UltimateSlimeBall), SlimeStaff).registerStat();
+        	SlimeTrophy_New_usage = new Achievement("slimetrophy_new_usage", "SlimeTrophy New usage", -7, 0, new ItemStack(SlimeCraftBlocks.SlimeTrophy), SlimeStaff).registerStat();
+        	SlimeMatter = new Achievement("slimematter", "Slime Matter", -9, 0, new ItemStack(SlimeCraftItems.SlimeMatter), SlimeTrophy_New_usage).registerStat();
+
+        	SlimeCraft_New_Crafting_System = new Achievement("slimecraft_newcrafting_system", "SlimeCraft New Crafting System", -5, -4, new ItemStack(SlimeCraftBlocks.SlimeTable), null).registerStat();
+        	SlimeXpTable = new Achievement("slimexptable", "Slime XpTable", -7, -5, new ItemStack(SlimeCraftBlocks.SlimeXpTable), SlimeCraft_New_Crafting_System).registerStat();
+
         	//実績ページ？上の工程が出来たら最後に１行目の文に,で追加してね
         	SlimeCraft_Achievement = new AchievementPage("SlimeCraft",Welcome_to_SlimeCraft,Slime_Sword,SlimeIron_Sword,SlimeDiamond_Sword,
         			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondAxe_X,SlimeDiamondHoe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub
-        			,EasyFood,Low_performance_personal_computer);
+        			,EasyFood,Low_performance_personal_computer,
+        			SlimeStaff,Range_attack,SlimeCraft_New_Crafting_System,SlimeXpTable,SlimeMatter,SlimeTrophy_New_usage
+        			);
         	AchievementPage.registerAchievementPage(SlimeCraft_Achievement);
 
 /*        	//SlimeBallBall
@@ -714,16 +732,41 @@ public class slimecraft{
        		new ItemStack(SlimeCraftBlocks.CompactSlimeBlock)
        		);
 
-    }
+       
+       GameRegistry.addRecipe(new ItemStack(SlimeCraftItems.UltimateSlimeStaff),
+    			"QBS","EMB","SEQ",'S',SlimeCraftBlocks.CompactSlimeBlock_5,'M',SlimeCraftItems.SlimeMultiTool
+    			);
+
+    	   GameRegistry.addRecipe(new ItemStack(SlimeCraftItems.UltimateSlimeStaff),
+    			"QBS","EMB","SEQ",'S',SlimeCraftBlocks.CompactSlimeBlock_5,'M',SlimeCraftItems.SlimeMultiToolFortune
+    			);
+    	   GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeTable),
+    			"III","ICI","III",'I',SlimeCraftItems.SlimeIron,'C',Blocks.CRAFTING_TABLE
+    			);
+    	   GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeXpTable),
+    			"IDI","DED","IDI",'I',SlimeCraftItems.SlimeIron,'D',SlimeCraftItems.SlimeDiamond,'E',Blocks.ENCHANTING_TABLE
+    			);
+    	   GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.UltimateBallBlock),
+    		   	"SSS","SSS","SSS",'S',SlimeCraftItems.UltimateSlimeBall
+    			);
+    	   GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeMatterBlock),
+    		   "SSS","SSS","SSS",'S',SlimeCraftBlocks.UltimateBallBlock
+    			);
+     	   //MatterRecipe
+    	   //ここからマターレシピだお
+
+    	   GameRegistry.addRecipe(new ItemStack(Items.DIAMOND),
+    		    "SSS","SSS","SSS",'S',SlimeCraftItems.SlimeMatter
+    			);
+    	   GameRegistry.addRecipe(new ItemStack(Items.IRON_INGOT,2),
+    			"SSS","XXX","XXX",'S',SlimeCraftItems.SlimeMatter
+    			);
+    	   GameRegistry.addRecipe(new ItemStack(Items.REDSTONE,4),
+    			"XXX","XRX","RRR",'R',SlimeCraftItems.SlimeMatter
+    			);
 
 
-    }
 
+    	    }
 
-
-
-
-
-
-
-
+    	}

@@ -171,18 +171,18 @@ public class UltimateSlimeStaff extends ItemTool{
 	                //UltimateSlimeBall変換
 	                if (block == SlimeCraftBlocks.SlimeTrophy)
 	                {
-	    	        	//playerIn.dropItem(new ItemStack(SlimeCraftItems.UltimateSlimeBall), true);
+	                	player.dropItem(new ItemStack(SlimeCraftItems.UltimateSlimeBall), true);
 	    	        	worldIn.destroyBlock(pos, false);
-	    	        	//playerIn.addStat(slimecraft.SlimeTrophy_New_usage);
+	    	        	player.addStat(slimecraft.SlimeTrophy_New_usage);
 	                }
 	                //SlimeMatter変換
-/*	                if (block == SlimeCraftBlocks.SlimeMatterBlock)
+	                if (block == SlimeCraftBlocks.SlimeMatterBlock)
 	                {
-	    	        	//playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMatter), true);
+	    	        	player.dropItem(new ItemStack(SlimeCraftItems.SlimeMatter), true);
 	    	        	worldIn.destroyBlock(pos, false);
-	    	        	//playerIn.addStat(slimecraft.SlimeTrophy_New_usage);
+	    	        	player.addStat(slimecraft.SlimeMatter);
 	                }
-*/
+
 	    	        if(player.isSneaking()) {
 	    	        	if(block == Blocks.STONE)
 	          			{
@@ -302,7 +302,7 @@ public class UltimateSlimeStaff extends ItemTool{
               entityUltimateSlimeBallBall.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
               worldIn.spawnEntity(entityUltimateSlimeBallBall);
           }
-          //playerIn.addStat(slimecraft.Range_attack);
+          playerIn.addStat(slimecraft.Range_attack);
 
           playerIn.addStat(StatList.getObjectUseStats(this));
           return new ActionResult(EnumActionResult.SUCCESS, itemstack);
