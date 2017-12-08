@@ -176,13 +176,13 @@ public class UltimateSlimeStaff extends ItemTool{
 	    	        	//player.addStat(slimecraft.SlimeTrophy_New_usage);
 	                }
 	                //SlimeMatter変換
-/*	                if (block == SlimeCraftBlocks.SlimeMatterBlock)
+	                if (block == SlimeCraftBlocks.SlimeMatterBlock)
 	                {
 	    	        	player.dropItem(new ItemStack(SlimeCraftItems.SlimeMatter), true);
 	    	        	worldIn.destroyBlock(pos, false);
 	    	        	//player.addStat(slimecraft.SlimeMatter);
 	                }
-*/
+
 	    	        if(player.isSneaking()) {
 	    	        	if(block == Blocks.STONE)
 	          			{
