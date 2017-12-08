@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "slimecraft:blocks/slimetable_down",
+        "down": "slimecraft:blocks/slimetable_down",
+        "up": "slimecraft:blocks/slimeexchangetable_top",
+        "north": "slimecraft:blocks/slimetable_side",
+        "east": "slimecraft:blocks/slimetable_down",
+        "south": "slimecraft:blocks/slimetable_down",
+        "west": "slimecraft:blocks/slimetable_down"
+    }
+}

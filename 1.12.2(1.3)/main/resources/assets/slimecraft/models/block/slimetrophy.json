@@ -32,12 +32,14 @@
 			}
 		}
 	],
-	"display": {
-		"thirdperson_righthand": {"scale": [1, 1, 1]},
-		"ground": {"scale": [1, 1, 1]},
-		"fixed": {"scale": [1, 1, 1]},
-		"gui": {"scale": [1, 1, 1]},
-		"firstperson_righthand": {"scale": [1, 1, 1]},
-		"thirdperson_lefthand": {"scale": [1, 1, 1]}
-	}
+	   "display": {
+        "thirdperson_righthand": {"scale": [1, 1, 1]},
+        "ground": {"scale": [1, 1, 1]},
+        "fixed": {"scale": [1, 1, 1]},
+        "gui": {"scale": [1, 1, 1]},
+        "firstperson_righthand": {"scale": [1, 1, 1]},
+        "thirdperson_lefthand": {"scale": [1, 1, 1]}
+        }
+        
+	
 }
