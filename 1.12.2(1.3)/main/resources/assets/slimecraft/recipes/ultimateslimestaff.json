@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "  X",
-    " # ",
+    " M ",
     "X  "
   ],
   "key": {
-    "#": {
+    "X": {
       "item": "slimecraft:compactslimeblock5"
     },
-    "X": {
+    "M": {
       "item": "slimecraft:slimemultitool"
     }
   },

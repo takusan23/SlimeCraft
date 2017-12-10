@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "III",
-    "ITI",
-    "III"
+    "  X",
+    " M ",
+    "X  "
   ],
   "key": {
-    "I": {
-      "item": "slimecraft:slimeiron"
+    "X": {
+      "item": "slimecraft:compactslimeblock5"
     },
-    "T": {
-      "item": "minecraft:crafting_table"
+    "M": {
+      "item": "slimecraft:slimemultitool"
     }
   },
   "result": {
-    "item": "slimecraft:slimetable"
+    "item": "slimecraft:ultimateslimestaff"
   }
 }

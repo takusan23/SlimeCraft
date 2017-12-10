@@ -36,11 +36,11 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
     {
         super(worldIn, x, y, z);
     }
-    
+
     @EventHandler
 	 public void init(FMLInitializationEvent event) {
 
-    	
+
     }
     @SideOnly(Side.CLIENT)
     public void handleStatusUpdate(byte id)
@@ -53,7 +53,7 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
             }
         }
     }
-    
+
 
 
     //@SuppressWarnings("null")
@@ -101,23 +101,22 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
     	        //範囲攻撃
     			//EntityMOBでモンスターにだけダメージを入れる
 
+                for (EntityMob entitymob : this.world.getEntitiesWithinAABB(EntityMob.class, this.getEntityBoundingBox().grow(16.0D, 16.0D, 16.0D)))
+                {
+                    //if (entitymob != playerIn && entitymob != tagetentity && !this.isOnSameTeam(entitymob) && this.getDistanceSq(entitymob) < 9.0D)
+                    if(entitymob != null)
+                	{
+                    	entitymob.knockBack(this, 0.4F, (double)MathHelper.sin(this.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(this.rotationYaw * 0.017453292F)));
+                    	entitymob.attackEntityFrom(DamageSource.causeMobDamage(this.getThrower()), (float)i);
+                    }
+                }
 
-    		    for (EntityMob entityMob : this.world.getEntitiesWithinAABB(EntityMob.class, this.getEntityBoundingBox().expand(16.0D, 16.0D, 16.0D)))
-    		    {
-    		    	//if (entitylivingbase != playerIn && entitylivingbase != tagetentity && !this.isOnSameTeam(entitylivingbase) && this.getDistanceSqToEntity(entitylivingbase) < 9.0D)
-    		    	if (entityMob != null)
-    		    	{
-    		            //entityMob.knockBack(playerIn, 0.4F, (double)MathHelper.sin(this.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(this.rotationYaw * 0.017453292F)));
-    		            entityMob.attackEntityFrom(DamageSource.causeMobDamage(this.getThrower()), (float)i);
-    		            //entitylivingbase.attackEntityFrom(DamageSource.causeThrownDamage(playerIn, this.getThrower()), (float)d);
-    		    	}
-
-                     this.world.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
+                this.world.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
 
     		    }
     		    //スライム用
-    		    for (EntitySlime entitySlime : this.world.getEntitiesWithinAABB(EntitySlime.class, this.getEntityBoundingBox().expand(16.0D, 16.0D, 16.0D)))
-    		    {
+            for (EntitySlime entitySlime : this.world.getEntitiesWithinAABB(EntitySlime.class, this.getEntityBoundingBox().grow(16.0D, 16.0D, 16.0D)))
+            {
     		    	if (entitySlime != null)
     		    	{
     		            entitySlime.knockBack(playerIn, 0.4F, (double)MathHelper.sin(this.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(this.rotationYaw * 0.017453292F)));
@@ -131,7 +130,7 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
 
 
           }
-        }
+
 
 		for (int j = 0; j < 8; ++j)
         {

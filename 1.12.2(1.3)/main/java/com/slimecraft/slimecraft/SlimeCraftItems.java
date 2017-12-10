@@ -103,7 +103,7 @@ public class SlimeCraftItems {
 		UltimateTool = EnumHelper.addToolMaterial("UltimateTool", 5, 0, 80.0F, 80.0F, 30)
 				.setRepairItem(new ItemStack(SlimeCraftItems.SlimeDiamond));
 
-		
+
 		SlimeDiamond = new Item().setUnlocalizedName("Slime Diamond").setCreativeTab(slimecraft.SlimeCraftTab);
 		SlimeIron = new Item().setUnlocalizedName("Slime Iron Ingot").setCreativeTab(slimecraft.SlimeCraftTab);
 		SlimeCookie = new SlimeCookie(10, false);
@@ -112,7 +112,7 @@ public class SlimeCraftItems {
 		SlimeMatter = new Item().setUnlocalizedName("Slime Matter").setCreativeTab(slimecraft.SlimeCraftTab);
 		//sword
 		SlimeSword = new ItemSword(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Sword").setMaxDamage(256);
-		SlimeIronSword = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
+		SlimeIronSword = new ItemSword(ToolMaterial.IRON).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
 		SlimeDiamondSword = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Sword");
 		SlimeDiamondSwordX = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Sword X");
 		//pickaxe
