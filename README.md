@@ -5,5 +5,5 @@ SlimeCraftのコードのせた。
 
 GitHub使い方がよくわからない(´・ω・｀)
 
-MODリンク↓
+MODリンク
 https://minecraft.curseforge.com/projects/slimecraft-add-tools-etc
