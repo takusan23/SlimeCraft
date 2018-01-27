@@ -8,6 +8,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -80,11 +81,10 @@ public class SlimeTable extends Block {
 	//新しいクラフティングシステム
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem,EnumFacing side, float hitX, float hitY, float hitZ)
 	{
-		playerIn.addStat(slimecraft.SlimeCraft_New_Crafting_System);
-
+		Entity entity = null;
 		//MOBドロップからスライムボール
          if (heldItem != null && (heldItem.getItem() == Items.ROTTEN_FLESH))
-         {
+         {        	 
         	 //4個以上持っている場合変換する
              if (heldItem.stackSize >= 4)
              {
