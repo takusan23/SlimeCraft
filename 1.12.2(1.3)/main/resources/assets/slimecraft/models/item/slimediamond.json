@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "slimecraft:items/slimediamond"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "slimecraft:items/slimediamond"
+  }
 }

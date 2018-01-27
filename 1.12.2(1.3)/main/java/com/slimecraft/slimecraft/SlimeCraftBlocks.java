@@ -30,6 +30,12 @@ public class SlimeCraftBlocks {
     public static Block CompactSlimeBlock_5;
     public static Item CompactSlimeBlock_5Item;
 
+    public static Block SlimeTable;
+    public static Block SlimeXpTable;
+//    public static Block SlimeExchangeTable;
+    public static Block UltimateBallBlock;
+    public static Block SlimeMatterBlock;
+
 	public static void init() {
 /*		SlimeIronBlockItem = new ItemBlock(SlimeIronBlock)
              	.setRegistryName(slimecraft.MOD_ID,"slimeironblock");
@@ -62,6 +68,12 @@ public class SlimeCraftBlocks {
 	   	CompactSlimeBlock_3 = new compactslimeblock_3();
 	   	CompactSlimeBlock_4 = new compactslimeblock_4();
 	   	CompactSlimeBlock_5 = new compactslimeblock_5();
+		SlimeTable = new SlimeTable();
+		SlimeXpTable = new SlimeXpTable();
+		UltimateBallBlock = new UltimateBallBlock();
+		SlimeMatterBlock = new SlimeMatterBlock();
+
+
 
 
 
@@ -78,6 +90,10 @@ public class SlimeCraftBlocks {
 		registerItemBlock(CompactSlimeBlock_3);
 		registerItemBlock(CompactSlimeBlock_4);
 		registerItemBlock(CompactSlimeBlock_5);
+		registerItemBlock(SlimeTable);
+		registerItemBlock(SlimeXpTable);
+		registerItemBlock(UltimateBallBlock);
+		registerItemBlock(SlimeMatterBlock);
 
 
 	}
@@ -100,6 +116,10 @@ public class SlimeCraftBlocks {
 		regiserRender(CompactSlimeBlock_3);
 		regiserRender(CompactSlimeBlock_4);
 		regiserRender(CompactSlimeBlock_5);
+		regiserRender(SlimeTable);
+		regiserRender(SlimeXpTable);
+		regiserRender(UltimateBallBlock);
+		regiserRender(SlimeMatterBlock);
 
 	}
 

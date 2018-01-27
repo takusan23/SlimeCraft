@@ -67,7 +67,8 @@ public class slimecraft{
     public static Item SlimeDiamondPickaxe;
     public static Item SlimeDiamondAxe;
     public static Item SlimeDiamondShovel;
-    public static Item SlimeDiamondHoe;
+    public static Item Sli
+    meDiamondHoe;
     //Slime Diamond X Tools
     public static Item SlimeDiamondPickaxeX;
     public static Item SlimeDiamondShovelX;

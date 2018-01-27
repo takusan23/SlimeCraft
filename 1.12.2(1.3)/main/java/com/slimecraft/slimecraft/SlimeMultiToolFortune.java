@@ -170,23 +170,22 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
 	    }
 
 
-
+/*
       public float getStrVsBlock(ItemStack stack, Block block) {
 
           return effectiveAgainst.contains(block) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, (IBlockState) block);
       }
+*/
 
 
 
+	    public float getDestroySpeed(ItemStack stack, IBlockState state)
+	    {
+        Material material = state.getMaterial();
 
-      public float getStrVsBlock(ItemStack stack, IBlockState state)
-      {
-          Material material = state.getMaterial();
-
-
-           return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE &&
-           material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
-      }
+         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE &&
+         material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getDestroySpeed(stack, state) : this.efficiency;
+    }
 
 
 
@@ -211,7 +210,7 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
           if (!worldIn.isRemote)
           {
               EntitySlimeBallBall entitySlimeBallBall = new EntitySlimeBallBall(worldIn, playerIn);
-              entitySlimeBallBall.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+              entitySlimeBallBall.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
               worldIn.spawnEntity(entitySlimeBallBall);
           }
 
