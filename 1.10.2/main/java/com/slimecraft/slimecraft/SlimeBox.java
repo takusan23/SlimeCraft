@@ -73,7 +73,7 @@ public class SlimeBox extends Block {
         return BlockRenderLayer.TRANSLUCENT;
     }
 
-/*	public boolean isFullCube(IBlockState state)
+	public boolean isFullCube(IBlockState state)
     {
         return false;
     }
@@ -82,7 +82,7 @@ public class SlimeBox extends Block {
     {
         return false;
     }
-*/
+
 
 
 }
