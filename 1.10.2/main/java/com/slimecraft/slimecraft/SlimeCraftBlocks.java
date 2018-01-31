@@ -40,7 +40,7 @@ public class SlimeCraftBlocks {
     public static Block SlimeMatterBlock;
     public static Block AdvancedSlimeTable;
     public static Block SlimeBox;
-
+    public static Block SlimeBox_Village;
 
 
 
@@ -76,6 +76,7 @@ public class SlimeCraftBlocks {
 		SlimeMatterBlock = new SlimeMatterBlock();
 		AdvancedSlimeTable = new AdvancedSlimeTable();
 		SlimeBox = new SlimeBox();
+		SlimeBox_Village = new SlimeBox_Village();
 	}
 	public static void register() {
 		registerBlock(SlimeIronBlock);
@@ -109,6 +110,7 @@ public class SlimeCraftBlocks {
 		registerBlock(SlimeMatterBlock);
 		registerBlock(AdvancedSlimeTable);
 		registerBlock(SlimeBox);
+		registerBlock(SlimeBox_Village);
 
 	}
 
@@ -152,6 +154,7 @@ public class SlimeCraftBlocks {
 		regiserRender(SlimeMatterBlock);
 		regiserRender(AdvancedSlimeTable);
 		regiserRender(SlimeBox);
+		regiserRender(SlimeBox_Village);
 	}
 
 	public static void regiserRender(net.minecraft.block.Block block) {

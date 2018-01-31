@@ -13,14 +13,15 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SlimeBox extends Block {
+public class SlimeBox_Village extends Block {
+
 	public static final PropertyDirection FACING;
 
-	public SlimeBox(){
+	public SlimeBox_Village(){
         super(Material.ROCK);
         setCreativeTab(slimecraft.SlimeCraftTab);
-        setRegistryName("slimebox");
-        setUnlocalizedName("Slime Box");
+        setRegistryName("slimebox_village");
+        setUnlocalizedName("Slime Box(Village)");
         setHardness(5.0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
