@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "slimecraft:slimebox_village" },
+        "facing=south": { "model": "slimecraft:slimebox_village", "y": 180 },
+        "facing=west":  { "model": "slimecraft:slimebox_village", "y": 270 },
+        "facing=east":  { "model": "slimecraft:slimebox_village", "y": 90 }
+    }
+}
