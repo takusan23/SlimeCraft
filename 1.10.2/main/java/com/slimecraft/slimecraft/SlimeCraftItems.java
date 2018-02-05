@@ -19,7 +19,7 @@ public class SlimeCraftItems {
     public static Item SlimeIronSword;
     public static Item SlimeDiamondSword;
     public static Item SlimeDiamondSwordX;
-    //tools
+    //shovel
     public static Item SlimePickaxe;
     public static Item SlimeAxe;
     public static Item SlimeHoe;
@@ -46,6 +46,7 @@ public class SlimeCraftItems {
     public static Item GlassStick;
     public static Item UltimateSlimeBall;
     public static Item SlimeMatter;
+    public static Item AdvancedSlimeTableCard;
     //マルチツール
     public static Item SlimeMultiTool;
     public static Item SlimeMultiToolFortune;
@@ -173,7 +174,7 @@ public class SlimeCraftItems {
         SlimeMakeing_8 = new Item().setMaxStackSize(1).setUnlocalizedName("SlimeMakeKit(Slime) 8/10");
         SlimeMakeing_9 = new Item().setMaxStackSize(1).setUnlocalizedName("SlimeMakeKit(Slime) 9/10");
         SlimeMakeing_10 = new Item().setCreativeTab(slimecraft.SlimeCraftTab).setMaxStackSize(1).setContainerItem(SlimeCraftItems.SlimeMakeKit).setUnlocalizedName("SlimeMakeKit(Slime) 10/10");;
-
+        AdvancedSlimeTableCard = new AdvancedSlimeTableCard().setMaxDamage(39).setMaxStackSize(1).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Advanced SlimeTable Card");
        	}
 
 	public static void register() {
@@ -231,6 +232,7 @@ public class SlimeCraftItems {
 		registerItem(InvisibilityCard, "invisiblilitycard");
 		registerItem(JumpBoostCard, "jumpboostcard");
 		registerItem(GlowingCard, "glowingcard");
+		registerItem(AdvancedSlimeTableCard, "advancedslimetablecard");
 		//slimemake
 		registerItem(SlimeMakeKit, "slimemakekit");
 		registerItem(SlimeMakeKit_2, "slimemakekit2");
@@ -261,6 +263,7 @@ public class SlimeCraftItems {
 		registerRender(GlassStick);
 		registerRender(UltimateSlimeBall);
 		registerRender(SlimeMatter);
+		registerRender(AdvancedSlimeTableCard);
 		//sword
 		registerRender(SlimeSword);
 		registerRender(SlimeIronSword);

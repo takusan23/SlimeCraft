@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "S": {
+      "item": "slimecraft:slimematter"
+    }
+  },
+  "result": {
+    "item": "minecraft:iron_ingot",
+     "count":2
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "SSS",
+    "   "
+  ],
+  "key": {
+    "S": {
+      "item": "slimecraft:slimematter"
+    }
+  },
+  "result": {
+    "item": "minecraft:redstone",
+     "count":4
+  }
+}

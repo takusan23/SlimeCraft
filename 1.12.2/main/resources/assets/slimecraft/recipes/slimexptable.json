@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IDI",
+    "DTD",
+    "IDI"
+  ],
+  "key": {
+    "I": {
+      "item": "slimecraft:slimeiron"
+    },
+       "D": {
+      "item": "slimecraft:slimediamond"
+    },
+    "T": {
+      "item": "minecraft:enchanting_table"
+    }
+  },
+  "result": {
+    "item": "slimecraft:slimexptable"
+  }
+}

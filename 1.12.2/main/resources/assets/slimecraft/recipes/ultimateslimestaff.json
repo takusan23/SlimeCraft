@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  X",
+    " M ",
+    "X  "
+  ],
+  "key": {
+    "X": {
+      "item": "slimecraft:compactslimeblock5"
+    },
+    "M": {
+      "item": "slimecraft:slimemultitool"
+    }
+  },
+  "result": {
+    "item": "slimecraft:ultimateslimestaff"
+  }
+}

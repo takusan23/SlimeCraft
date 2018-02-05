@@ -193,7 +193,7 @@ public class UltimateSlimeStaff extends ItemTool{
 		                {
 		    	        	playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMatter), true);
 		    	        	worldIn.destroyBlock(pos, false);
-		    	        	playerIn.addStat(slimecraft.SlimeTrophy_New_usage);
+		    	        	playerIn.addStat(slimecraft.SlimeMatter);
 		                }
 
 		    	        if(playerIn.isSneaking()) {

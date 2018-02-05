@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 public class AdvancedSlimeTable extends Block {
 	public static final PropertyDirection FACING;
 
-    private BlockPattern snowmanBasePattern;
+    private BlockPattern slimebox_village;
     private BlockPattern slimebox;
     private static final Predicate<IBlockState> ADVANCED = new Predicate<IBlockState>()
     {
@@ -98,20 +98,21 @@ public class AdvancedSlimeTable extends Block {
 
     private void trySpawnGolem(World worldIn, BlockPos pos)
     {
-        BlockPattern.PatternHelper blockpattern$patternhelper = this.getSnowmanBasePattern().match(worldIn, pos);
-
+        BlockPattern.PatternHelper blockpattern$patternhelper = this.Slimebox_Village_Crafting().match(worldIn, pos);
         if (blockpattern$patternhelper != null)
         {
-            for (int i = 0; i < this.getSnowmanBasePattern().getThumbLength(); ++i)
+            for (int k = 0; k < this.SlimeBox_Crafting().getPalmLength(); ++k)
             {
-                BlockWorldState blockworldstate = blockpattern$patternhelper.translateOffset(0, i, 0);
-                worldIn.setBlockState(blockworldstate.getPos(), Blocks.AIR.getDefaultState(), 2);
+                for (int l = 0; l < this.SlimeBox_Crafting().getThumbLength(); ++l)
+                {
+                    worldIn.setBlockState(blockpattern$patternhelper.translateOffset(k, l, 0).getPos(), Blocks.AIR.getDefaultState(), 2);
+                }
             }
             EntitySlime entitySlime = new EntitySlime(worldIn);
             BlockPos blockpos1 = blockpattern$patternhelper.translateOffset(0, 2, 0).getPos();
             entitySlime.setLocationAndAngles((double)blockpos1.getX() + 0.5D, (double)blockpos1.getY() + 0.05D, (double)blockpos1.getZ() + 0.5D, 0.0F, 0.0F);
-            worldIn.spawnEntityInWorld(entitySlime);
-            //worldIn.setBlockState(pos, SlimeCraftBlocks.CompactSlimeBlock.getDefaultState(), 2);
+            //worldIn.spawnEntityInWorld(entitySlime);
+            worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeBox_Village.getDefaultState(), 2);
         }
 
         else
@@ -140,14 +141,24 @@ public class AdvancedSlimeTable extends Block {
 
 
     //パターン
-    private BlockPattern getSnowmanBasePattern()
+    private BlockPattern Slimebox_Village_Crafting()
     {
-        if (this.snowmanBasePattern == null)
+        if (this.slimebox_village== null)
         {
-            this.snowmanBasePattern = FactoryBlockPattern.start().aisle(new String[] {"###", "# #", "###"}).where('#', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.SLIME_BLOCK))).where('~', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR))).build();
+            this.slimebox_village = FactoryBlockPattern.start().aisle(new String[]
+            		{"~C~", "E L", "DBS"})
+            		//{"~^~", "CCC", "~B~"})
+            		.where('C', BlockWorldState.hasState(BlockStateMatcher.forBlock(SlimeCraftBlocks.CompactSlimeBlock)))
+            		.where('E', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.EMERALD_BLOCK)))
+            		.where('L', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.LOG)))
+            		.where('D', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.GRASS)))
+            		.where('B', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.BEACON)))
+            		.where('S', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.COBBLESTONE)))
+            		.where('~', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR)))
+            		.build();
         }
 
-        return this.snowmanBasePattern;
+        return this.slimebox_village;
     }
 
     private BlockPattern SlimeBox_Crafting()
@@ -155,14 +166,13 @@ public class AdvancedSlimeTable extends Block {
         if (this.slimebox == null)
         {
             this.slimebox = FactoryBlockPattern.start().aisle(new String[]
-            		{"~C~", "D P", "~B~"})
+            		{"~C~", "L P", "~B~"})
             		//{"~^~", "CCC", "~B~"})
             		.where('C', BlockWorldState.hasState(BlockStateMatcher.forBlock(SlimeCraftBlocks.CompactSlimeBlock)))
             		.where('B', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.BEACON)))
             		.where('P', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.LEAVES)))
-            		.where('D', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.GRASS)))
+            		.where('L', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.GRASS)))
             		.where('~', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR)))
-            		.where('^', BlockWorldState.hasState(ADVANCED))
             		.build();
         }
         return this.slimebox;
