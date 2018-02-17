@@ -13,10 +13,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class AdvancedSlimeTableCard extends Item{
-
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-
 		 if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
 	        {
 	            return EnumActionResult.FAIL;
@@ -36,13 +34,19 @@ public class AdvancedSlimeTableCard extends Item{
 
 			 else if (worldIn.isAirBlock(pos.up()))
 			 {
-
-                pos = pos.offset(facing);
+				 if (stack.getMaxDamage() !=1)
+				 	{
+					pos = pos.offset(facing);
           			worldIn.setBlockState(pos, SlimeCraftBlocks.AdvancedSlimeTable.getDefaultState(), 11);
           			stack.damageItem(1, playerIn);
+			 		}
+			 }
+
+
 
 			 }
-			 }
+
+
 	            return EnumActionResult.SUCCESS;
 
 

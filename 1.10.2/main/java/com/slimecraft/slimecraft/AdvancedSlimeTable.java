@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
@@ -29,6 +30,7 @@ public class AdvancedSlimeTable extends Block {
 
     private BlockPattern slimebox_village;
     private BlockPattern slimebox;
+    private BlockPattern slimespawn;
     private static final Predicate<IBlockState> ADVANCED = new Predicate<IBlockState>()
     {
         public boolean apply(@Nullable IBlockState p_apply_1_)
@@ -83,8 +85,7 @@ public class AdvancedSlimeTable extends Block {
     static {
 		FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	}
-
-
+    
 
     //Advanced Crafting System
     //無駄に名前だけかっこいい
@@ -137,6 +138,29 @@ public class AdvancedSlimeTable extends Block {
 
           }
         }
+        
+        blockpattern$patternhelper = this.Slime_Spawn().match(worldIn, pos);
+        if(blockpattern$patternhelper != null)
+        {
+            for (int k = 0; k < this.Slime_Spawn().getPalmLength(); ++k)
+            {
+                for (int l = 0; l < this.Slime_Spawn().getThumbLength(); ++l)
+                {
+                    worldIn.setBlockState(blockpattern$patternhelper.translateOffset(k, l, 0).getPos(), Blocks.AIR.getDefaultState(), 2);
+                }
+            }
+            BlockPos blockpos = blockpattern$patternhelper.translateOffset(1, 2, 0).getPos();
+            EntitySlime entitySlime = new EntitySlime(worldIn);
+            entitySlime.setPosition(pos.getX(), pos.getY(), pos.getZ());
+            NBTTagCompound tag = entitySlime.getEntityData();
+            tag.setInteger("Size", 4);
+            entitySlime.readEntityFromNBT(tag);
+           //entitySlime.setPlayerCreated(true);
+            entitySlime.setLocationAndAngles((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
+            worldIn.spawnEntityInWorld(entitySlime);
+            //worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeBox.getDefaultState(), 2);
+
+        }
     }
 
 
@@ -178,6 +202,19 @@ public class AdvancedSlimeTable extends Block {
         return this.slimebox;
     }
 
+    private BlockPattern Slime_Spawn()
+    {
+        if (this.slimespawn == null)
+        {
+            this.slimespawn = FactoryBlockPattern.start().aisle(new String[]
+            		{"~S~", "S S", "~S~"})
+            		//{"~^~", "CCC", "~B~"})
+             		.where('S', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.SLIME_BLOCK)))
+             		.where('~', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR)))
+            		.build();
+        }
+        return this.slimespawn;
+    }
 
 
 }

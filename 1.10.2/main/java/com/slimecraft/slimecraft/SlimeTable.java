@@ -134,6 +134,15 @@ public class SlimeTable extends Block {
              }
          }
 
+         if (heldItem != null && (heldItem.getItem() == Items.DIAMOND))
+         {
+             if (heldItem.stackSize >= 9)
+             {
+            	 heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;heldItem.stackSize--;
+            	 playerIn.dropItem(new ItemStack(SlimeCraftItems.AdvancedSlimeTableCard), true);
+            	 return true;
+             }
+         }
 
 
          if (heldItem != null && (heldItem.getItem() == SlimeCraftItems.SlimeMakeing_1))
