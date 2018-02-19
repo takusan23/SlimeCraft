@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "slimecraft:blocks/advancedslimetable_down",
+        "down": "slimecraft:blocks/advancedslimetable_down",
+        "up": "slimecraft:blocks/advancedslimetable_top",
+        "north": "slimecraft:blocks/advancedslimetable_side",
+        "east": "slimecraft:blocks/advancedslimetable_down",
+        "south": "slimecraft:blocks/advancedslimetable_down",
+        "west": "slimecraft:blocks/advancedslimetable_down"
+    }
+}

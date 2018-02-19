@@ -8,6 +8,8 @@ item.Slime Diamond.name=Slime Diamond
 item.Slime Iron Ingot.name=Slime Iron
 item.Slime Cookie.name=Slime Cookie
 item.Glass Stick.name=Glass Stick
+item.Advanced SlimeTable Card.name=Advanced SlimeTable Card
+
 
 item.Slime Pickaxe.name=Slime Pickaxe
 item.SlimeIron Pickaxe.name=SlimeIron Pickaxe
@@ -49,6 +51,7 @@ tile.SlimeLamp.name=Slime Lamp
 tile.SlimeLamp_light.name=Slime Lamp(Light)
 tile.UltimateBall Block.name=UltimateBall Block
 tile.SlimeMatter Block.name=SlimeMatter Block
+tile.Advanced SlimeTable.name=Advanced SlimeTable
 
 item.Potion Card.name=Potion Card
 item.Speed Card.name=Speed Card

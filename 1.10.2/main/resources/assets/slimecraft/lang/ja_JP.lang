@@ -9,7 +9,7 @@ item.Slime Iron Ingot.name=鉄スライム
 item.Slime Cookie.name=スライムクッキー
 item.Glass Stick.name=ガラス棒
 item.Ultimate SlimeBall.name=最上位のスライムボール
-
+item.Advanced SlimeTable Card.name=上位スライムテーブルカード
 
 item.Slime Pickaxe.name=スライムのツルハシ
 item.SlimeIron Pickaxe.name=鉄スライムのツルハシ
@@ -46,6 +46,8 @@ tile.SlimeLamp.name=スライムランプ
 tile.SlimeLamp_light.name=光っているスライムランプ
 tile.UltimateBall Block.name=アルティメットボールブロック
 tile.SlimeMatter Block.name=スライムマターブロック
+tile.Advanced SlimeTable.name=上位スライムテーブル
+
 
 item.Potion Card.name=ポーションカード
 item.Speed Card.name=移動速度上昇カード

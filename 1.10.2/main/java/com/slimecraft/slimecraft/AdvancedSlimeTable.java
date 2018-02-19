@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
@@ -85,7 +86,7 @@ public class AdvancedSlimeTable extends Block {
     static {
 		FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	}
-    
+
 
     //Advanced Crafting System
     //無駄に名前だけかっこいい
@@ -95,7 +96,6 @@ public class AdvancedSlimeTable extends Block {
         super.onBlockAdded(worldIn, pos, state);
         this.trySpawnGolem(worldIn, pos);
     }
-
 
     private void trySpawnGolem(World worldIn, BlockPos pos)
     {
@@ -116,7 +116,7 @@ public class AdvancedSlimeTable extends Block {
             worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeBox_Village.getDefaultState(), 2);
         }
 
-        else
+
         {
         	blockpattern$patternhelper = this.SlimeBox_Crafting().match(worldIn, pos);
             if (blockpattern$patternhelper != null)
@@ -138,7 +138,7 @@ public class AdvancedSlimeTable extends Block {
 
           }
         }
-        
+
         blockpattern$patternhelper = this.Slime_Spawn().match(worldIn, pos);
         if(blockpattern$patternhelper != null)
         {
@@ -155,12 +155,13 @@ public class AdvancedSlimeTable extends Block {
             NBTTagCompound tag = entitySlime.getEntityData();
             tag.setInteger("Size", 4);
             entitySlime.readEntityFromNBT(tag);
-           //entitySlime.setPlayerCreated(true);
+            entitySlime.dropItem(Items.SLIME_BALL, 10);
             entitySlime.setLocationAndAngles((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
             worldIn.spawnEntityInWorld(entitySlime);
-            //worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeBox.getDefaultState(), 2);
 
         }
+
+
     }
 
 
@@ -207,7 +208,7 @@ public class AdvancedSlimeTable extends Block {
         if (this.slimespawn == null)
         {
             this.slimespawn = FactoryBlockPattern.start().aisle(new String[]
-            		{"~S~", "S S", "~S~"})
+            		{"~~~", "S S", "~~~"})
             		//{"~^~", "CCC", "~B~"})
              		.where('S', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.SLIME_BLOCK)))
              		.where('~', BlockWorldState.hasState(BlockStateMatcher.forBlock(Blocks.AIR)))
@@ -215,6 +216,5 @@ public class AdvancedSlimeTable extends Block {
         }
         return this.slimespawn;
     }
-
 
 }

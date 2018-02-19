@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "slimecraft:advancedslimetable" },
+        "facing=south": { "model": "slimecraft:advancedslimetable", "y": 180 },
+        "facing=west":  { "model": "slimecraft:advancedslimetable", "y": 270 },
+        "facing=east":  { "model": "slimecraft:advancedslimetable", "y": 90 }
+    }
+}

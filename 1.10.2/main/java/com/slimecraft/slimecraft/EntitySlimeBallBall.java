@@ -95,6 +95,7 @@ public class EntitySlimeBallBall extends EntityThrowable{
             for (int j = 0; j < 8; ++j)
             {
                 this.worldObj.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, new int[0]);
+
                 //this.worldObj.loadedEntityList.clear();
 
 
