@@ -18,7 +18,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
@@ -155,7 +154,7 @@ public class AdvancedSlimeTable extends Block {
             NBTTagCompound tag = entitySlime.getEntityData();
             tag.setInteger("Size", 4);
             entitySlime.readEntityFromNBT(tag);
-            entitySlime.dropItem(Items.SLIME_BALL, 10);
+            //entitySlime.dropItem(Items.SLIME_BALL, 10);
             entitySlime.setLocationAndAngles((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
             worldIn.spawnEntityInWorld(entitySlime);
 

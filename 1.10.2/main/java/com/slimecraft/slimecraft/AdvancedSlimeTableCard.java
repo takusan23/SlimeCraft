@@ -20,7 +20,7 @@ public class AdvancedSlimeTableCard extends Item{
 	            return EnumActionResult.FAIL;
 	        }
 
-	        else if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
+		   else if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
 	        {
 		           IBlockState iblockstate = worldIn.getBlockState(pos);
 		           Block block = iblockstate.getBlock();
@@ -28,27 +28,28 @@ public class AdvancedSlimeTableCard extends Item{
 	            		{
 	            			stack.damageItem(-1, playerIn);
 	            			worldIn.destroyBlock(pos, false);
-
 	            		}
+				   else if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
+				   {
+		           	if (block == SlimeCraftBlocks.AdvancedSlimeTable)
+		           	{
+		           		stack.damageItem(-1, playerIn);
+		           		worldIn.destroyBlock(pos, false);		           		
+		           	}
 
 
 			 else if (worldIn.isAirBlock(pos.up()))
 			 {
-				 if (stack.getMaxDamage() !=1)
-				 	{
 					pos = pos.offset(facing);
-          			worldIn.setBlockState(pos, SlimeCraftBlocks.AdvancedSlimeTable.getDefaultState(), 11);
-          			stack.damageItem(1, playerIn);
+         			worldIn.setBlockState(pos, SlimeCraftBlocks.AdvancedSlimeTable.getDefaultState(), 11);
+         			stack.damageItem(1, playerIn);
 			 		}
 			 }
 
-
-
-			 }
-
+	        }
 
 	            return EnumActionResult.SUCCESS;
-
+	        
 
 
 

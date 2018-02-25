@@ -111,6 +111,7 @@ public class SlimeCraftItems {
 		GlassStick = new Item().setUnlocalizedName("Glass Stick").setCreativeTab(slimecraft.SlimeCraftTab);
 		UltimateSlimeBall = new Item().setUnlocalizedName("Ultimate SlimeBall").setCreativeTab(slimecraft.SlimeCraftTab);
 		SlimeMatter = new Item().setUnlocalizedName("Slime Matter").setCreativeTab(slimecraft.SlimeCraftTab);
+        AdvancedSlimeTableCard = new AdvancedSlimeTableCard().setMaxDamage(39).setMaxStackSize(1).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Advanced SlimeTable Card");
 		//sword
 		SlimeSword = new ItemSword(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Sword").setMaxDamage(256);
 		SlimeIronSword = new ItemSword(ToolMaterial.IRON).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
@@ -174,7 +175,6 @@ public class SlimeCraftItems {
         SlimeMakeing_8 = new Item().setMaxStackSize(1).setUnlocalizedName("SlimeMakeKit(Slime) 8/10");
         SlimeMakeing_9 = new Item().setMaxStackSize(1).setUnlocalizedName("SlimeMakeKit(Slime) 9/10");
         SlimeMakeing_10 = new Item().setCreativeTab(slimecraft.SlimeCraftTab).setMaxStackSize(1).setContainerItem(SlimeCraftItems.SlimeMakeKit).setUnlocalizedName("SlimeMakeKit(Slime) 10/10");;
-        AdvancedSlimeTableCard = new AdvancedSlimeTableCard().setMaxDamage(39).setMaxStackSize(1).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Advanced SlimeTable Card");
        	}
 
 	public static void register() {
