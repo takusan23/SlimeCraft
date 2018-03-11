@@ -157,6 +157,7 @@ public class AdvancedSlimeTable extends Block {
             //entitySlime.dropItem(Items.SLIME_BALL, 10);
             entitySlime.setLocationAndAngles((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
             worldIn.spawnEntityInWorld(entitySlime);
+            worldIn.spawnEntityInWorld(entitySlime);
 
         }
 

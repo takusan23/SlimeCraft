@@ -66,7 +66,6 @@ public class UltimateSlimeStaff extends ItemTool{
 
 	        if (block == Blocks.OBSIDIAN)
 	        {
-
 	            return this.toolMaterial.getHarvestLevel() == 5;
 	        }
 

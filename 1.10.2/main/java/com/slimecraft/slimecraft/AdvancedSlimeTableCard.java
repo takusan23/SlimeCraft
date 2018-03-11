@@ -13,6 +13,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class AdvancedSlimeTableCard extends Item{
+
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
 		 if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
@@ -22,39 +23,34 @@ public class AdvancedSlimeTableCard extends Item{
 
 		   else if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
 	        {
-		           IBlockState iblockstate = worldIn.getBlockState(pos);
-		           Block block = iblockstate.getBlock();
+	           IBlockState iblockstate = worldIn.getBlockState(pos);
+	           Block block = iblockstate.getBlock();
+			   //if(stack.getItemDamage() <= 38)
 		           if (block == Blocks.SLIME_BLOCK)
 	            		{
 	            			stack.damageItem(-1, playerIn);
 	            			worldIn.destroyBlock(pos, false);
 	            		}
-				   else if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
-				   {
-		           	if (block == SlimeCraftBlocks.AdvancedSlimeTable)
-		           	{
-		           		stack.damageItem(-1, playerIn);
-		           		worldIn.destroyBlock(pos, false);		           		
-		           	}
-
-
-			 else if (worldIn.isAirBlock(pos.up()))
-			 {
-					pos = pos.offset(facing);
-         			worldIn.setBlockState(pos, SlimeCraftBlocks.AdvancedSlimeTable.getDefaultState(), 11);
-         			stack.damageItem(1, playerIn);
-			 		}
-			 }
-
+			    		else if (facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
+			    		{
+			    			if (block == SlimeCraftBlocks.AdvancedSlimeTable)
+			    			{
+					    		stack.damageItem(-1, playerIn);
+					    		worldIn.destroyBlock(pos, false);
+					    	}
+					    		else if (worldIn.isAirBlock(pos.up()))
+					    			{
+					    				if(stack.getItemDamage() <= 38)
+					    				{
+					    					pos = pos.offset(facing);
+					    					worldIn.setBlockState(pos, SlimeCraftBlocks.AdvancedSlimeTable.getDefaultState(), 11);
+					    					stack.damageItem(1, playerIn);
+					    				}
+					    			}
+			    		}
 	        }
-
-	            return EnumActionResult.SUCCESS;
-	        
-
-
-
+	        return EnumActionResult.SUCCESS;
     }
-
 }
 
 
