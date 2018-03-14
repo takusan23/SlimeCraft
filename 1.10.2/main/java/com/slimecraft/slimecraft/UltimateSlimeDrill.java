@@ -32,44 +32,51 @@ public class UltimateSlimeDrill extends ItemTool {
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
 
+        IBlockState iblockstate = worldIn.getBlockState(pos);
+        Block block = iblockstate.getBlock();
+
 		 if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
 	        {
 	            return EnumActionResult.FAIL;
 	        }
-	        else
-	        {
-	            IBlockState iblockstate = worldIn.getBlockState(pos);
-	            Block block = iblockstate.getBlock();
-
 	            //Shiftと右クリックでStaffにする
-		        if(playerIn.isSneaking()) {
-		        	if(block == Blocks.STONE)
-		        	{
+		  	    //if(playerIn.isSneaking())
+		  		if(block == Blocks.STONE && playerIn.isSneaking())
+		        		{
 		        		--stack.stackSize;
 		        		//playerIn.inventory.addItemStackToInventory(new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		playerIn.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
-		        	}
-		        	if(block == Blocks.COBBLESTONE)
-		        	{
+		        		}
+		  		else if(block == Blocks.COBBLESTONE && playerIn.isSneaking())
+		        		{
 		        		--stack.stackSize;
 		        		//playerIn.inventory.setInventorySlotContents(0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		playerIn.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
-		        	}
-		        }
-	        	if(block == Blocks.BEDROCK)
-      			{
-	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
-	        		--stack.stackSize;
-      			}
+		        		}
 
-		        	if(block != Blocks.BEDROCK)
-		        	{
-		        		worldIn.destroyBlock(pos, false);
-		        		TileEntity tileEntity = null;
-		        		block.harvestBlock(worldIn, playerIn, pos, iblockstate, tileEntity, stack);
-		        	}
-	      }
-		return null;
+		  		else if(block == Blocks.BEDROCK)
+		  				{
+	        				playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
+	        				--stack.stackSize;
+		  				}
+
+		  		//岩盤以外のブロックを破壊する
+		  		else if(block != Blocks.BEDROCK)
+		        		{
+		        			worldIn.destroyBlock(pos, false);
+		        			TileEntity tileEntity = null;
+		        			block.harvestBlock(worldIn, playerIn, pos, iblockstate, tileEntity, stack);
+		        		}
+
+//		  		//岩盤以外のブロックを破壊する
+//		  		else if(block.getHarvestLevel(iblockstate) <= harv)
+//		        		{
+//		        			worldIn.destroyBlock(pos, false);
+//		        			TileEntity tileEntity = null;
+//		        			block.harvestBlock(worldIn, playerIn, pos, iblockstate, tileEntity, stack);
+//		        		}
+
+	        return EnumActionResult.SUCCESS;
 	    }
     @Override
     public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean isHeld) {
