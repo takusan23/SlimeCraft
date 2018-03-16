@@ -60,13 +60,11 @@ public class UltimateSlimeStaff extends ItemTool{
 		 public boolean canHarvestBlock(IBlockState blockIn)
 	    {
 
-
 	        Block block = blockIn.getBlock();
-
 
 	        if (block == Blocks.OBSIDIAN)
 	        {
-	            return this.toolMaterial.getHarvestLevel() == 5;
+	            return this.toolMaterial.getHarvestLevel() == 3;
 	        }
 
 

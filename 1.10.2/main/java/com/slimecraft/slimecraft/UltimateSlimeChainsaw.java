@@ -58,14 +58,15 @@ public class UltimateSlimeChainsaw extends ItemTool {
 		        		//playerIn.inventory.setInventorySlotContents(0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		playerIn.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
-		        	else if(block == Blocks.BEDROCK)
-          			{
-    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
-    	        		--stack.stackSize;
-          			}
+//		        	else if(block == Blocks.BEDROCK)
+//          			{
+//    	        		playerIn.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
+//    	        		--stack.stackSize;
+//          			}
 
 			  		//岩盤以外のブロックを破壊する
-			  		else if(block == Blocks.BEDROCK)
+			  		//setBlockUnbreakableは-1.0Fに設定されている
+			  		else if(block.getBlockHardness(iblockstate, worldIn, pos) != 1.0F)
 			        		{
 			        			worldIn.destroyBlock(pos, false);
 			        			TileEntity tileEntity = null;

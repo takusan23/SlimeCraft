@@ -1,9 +1,9 @@
 {
-	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
-	"textures": {
-		"0": "slimecraft:items/ultimateslimestaff",
-		"particle": "slimecraft:items/ultimateslimestaff"
-	},
+    "credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+    "textures": {
+        "0": "slimecraft:items/ultimateslimestaff",
+        "particle": "slimecraft:items/ultimateslimestaff"
+    },
 	"elements": [
 		{
 			"name": "cube",
@@ -59,32 +59,14 @@
 		},
 		{
 			"name": "cube",
-			"from": [2, -14, 2],
-			"to": [14, -3, 14],
-			"faces": {
-				"north": {"uv": [5, 0, 11, 5], "texture": "#0"},
-				"east": {"uv": [5, 0, 11, 5], "texture": "#0"},
-				"south": {"uv": [5, 0, 11, 5], "texture": "#0"},
-				"west": {"uv": [5, 0, 11, 5], "texture": "#0"},
-				"up": {"uv": [5, 0, 6, 5], "texture": "#0"},
-				"down": {"uv": [5, 0, 6, 5], "texture": "#0"}
-			},
-			"rotation": {
-				"origin": [8, -27, 8],
-				"axis": "y",
-				"angle": 0
-			}
-		},
-		{
-			"name": "cube",
 			"from": [5, 19, 5],
 			"to": [11, 25, 11],
 			"faces": {
-				"north": {"uv": [9, 3, 11, 5], "texture": "#0"},
-				"east": {"uv": [9, 3, 11, 5], "texture": "#0"},
-				"south": {"uv": [9, 3, 11, 5], "texture": "#0"},
-				"west": {"uv": [9, 3, 11, 5], "texture": "#0"},
-				"up": {"uv": [9, 3, 11, 5], "texture": "#0"},
+				"north": {"uv": [5, 0, 6, 5], "texture": "#0"},
+				"east": {"uv": [5, 0, 11, 5], "texture": "#0"},
+				"south": {"uv": [5, 0, 6, 5], "texture": "#0"},
+				"west": {"uv": [5, 0, 11, 5], "texture": "#0"},
+				"up": {"uv": [5, 0, 6, 5], "texture": "#0"},
 				"down": {"uv": [9, 3, 11, 5], "texture": "#0"}
 			}
 		},
@@ -202,14 +184,14 @@
 		"ground": {"scale": [0.4, 0.4, 0.4]},
 		"rotation": [0.8, 0.8, 0.8],
 		"fixed": {
-			"scale": [0.5, 0.5, 0.5],
-			"translation": [0, -2, 0],
-			"rotation": [0, 30, 0]
+			"translation": [0, -2.5, 0],
+			"rotation": [0, -90, 0],
+			"scale": [0.6, 0.6, 0.6]
 		},
 		"gui": {
-			"scale": [0.4, 0.4, 0.4],
-			"translation": [0, 1, 0],
-			"rotation": [0, 30, 0]
+			"scale": [0.5, 0.5, 0.5],
+			"translation": [0, -1.5, 0],
+			"rotation": [0, 90, 0]
 		}
 	}
 }

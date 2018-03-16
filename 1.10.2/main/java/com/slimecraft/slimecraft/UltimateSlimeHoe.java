@@ -32,6 +32,12 @@ public class UltimateSlimeHoe extends ItemTool {
 		private static Set effectiveAgainst = Sets.newHashSet(new Block[] {
 		});
 
+	    public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target)
+	    {
+	        if (worldIn instanceof net.minecraft.world.WorldServer)
+	            return applyBonemeal(stack, worldIn, target);
+	        return false;
+	    }
 
 		public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		    {
@@ -106,32 +112,33 @@ public class UltimateSlimeHoe extends ItemTool {
 
 
 	    	        }
-	                        if (!worldIn.isRemote)
+
+
+
+	           // IBlockState iblockstate = worldIn.getBlockState(pos);
+
+	            int hook = net.minecraftforge.event.ForgeEventFactory.onApplyBonemeal(playerIn, worldIn, pos, iblockstate, stack);
+	            //if (hook != 0) return hook > 0;
+
+	            if (iblockstate.getBlock() instanceof IGrowable)
+	            {
+	                IGrowable igrowable = (IGrowable)iblockstate.getBlock();
+
+	                if (igrowable.canGrow(worldIn, pos, iblockstate, worldIn.isRemote))
+	                {
+	                    if (!worldIn.isRemote)
+	                    {
+	                        if (igrowable.canUseBonemeal(worldIn, worldIn.rand, pos, iblockstate))
 	                        {
-	                            worldIn.playEvent(2005, pos, 0);
+	                            igrowable.grow(worldIn, worldIn.rand, pos, iblockstate);
 	                        }
-	                        if (iblockstate.getBlock() instanceof IGrowable)
-	                        {
-	                            IGrowable igrowable = (IGrowable)iblockstate.getBlock();
+	                    }
+	            }
 
-	                            if (igrowable.canGrow(worldIn, pos, iblockstate, worldIn.isRemote))
-	                            {
-	                                if (!worldIn.isRemote)
-	                                {
-	                                    if (igrowable.canUseBonemeal(worldIn, worldIn.rand, pos, iblockstate))
-	                                    {
-	                                        igrowable.grow(worldIn, worldIn.rand, pos, iblockstate);
-	                                    }
-	                                }
-	                            }
-	                        }
-
-	          			}
-
-			return null;
-
-	    	        }
-
+	        }
+	        return EnumActionResult.SUCCESS;
+	    }
+		    }
 
 
 
