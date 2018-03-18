@@ -110,11 +110,8 @@ public class EntityUltimateSlimeBallBall extends EntityThrowable{
     		    	{
     		            entitySlime.knockBack(playerIn, 0.4F, (double)MathHelper.sin(this.rotationYaw * 0.017453292F), (double)(-MathHelper.cos(this.rotationYaw * 0.017453292F)));
     		            entitySlime .attackEntityFrom(DamageSource.causeMobDamage(this.getThrower()), (float)i);
-
     		    	}
-
                     this.worldObj.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, this.getSoundCategory(), 1.0F, 1.0F);
-
     		    }
 
 

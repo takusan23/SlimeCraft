@@ -66,7 +66,7 @@ public class UltimateSlimeChainsaw extends ItemTool {
 
 			  		//岩盤以外のブロックを破壊する
 			  		//setBlockUnbreakableは-1.0Fに設定されている
-			  		else if(block.getBlockHardness(iblockstate, worldIn, pos) != 1.0F)
+			  		else if(block.getBlockHardness(iblockstate, worldIn, pos) != -1.0F)
 			        		{
 			        			worldIn.destroyBlock(pos, false);
 			        			TileEntity tileEntity = null;

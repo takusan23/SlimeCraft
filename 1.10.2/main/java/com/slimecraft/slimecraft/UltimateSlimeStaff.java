@@ -30,18 +30,11 @@ import net.minecraft.world.WorldServer;
 
 public class UltimateSlimeStaff extends ItemTool{
 
-
-
-
 		public UltimateSlimeStaff(ToolMaterial toolMaterial) {
 		//super(attackDamageIn, attackSpeedIn, materialIn, effectiveBlocksIn);
 			super(10, 20, SlimeCraftItems.UltimateTool, effectiveAgainst);
-
-
-
 			// TODO 自動生成されたコンストラクター・スタブ
 	}
-
 
 		@Override
 		public Set<String> getToolClasses(ItemStack stack) {
@@ -49,7 +42,7 @@ public class UltimateSlimeStaff extends ItemTool{
 		}
 
 		private static Set effectiveAgainst = Sets.newHashSet(new Block[] {
-			    Blocks.GRASS, Blocks.DIRT, Blocks.SAND, Blocks.GRAVEL,
+			    Blocks.GRASS, Blocks.DIRT, Blocks.SAND, Blocks.GRAVEL,Blocks.GLASS,Blocks.REDSTONE_LAMP,Blocks.WEB,
 			    Blocks.SNOW_LAYER, Blocks.SNOW, Blocks.CLAY, Blocks.FARMLAND,
 			    Blocks.SOUL_SAND, Blocks.MYCELIUM,Blocks.COBBLESTONE,Blocks.STONE,
 		        Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE,Blocks.IRON_BLOCK,Blocks.OBSIDIAN,
@@ -59,10 +52,9 @@ public class UltimateSlimeStaff extends ItemTool{
 
 		 public boolean canHarvestBlock(IBlockState blockIn)
 	    {
+			return true;
 
-	        Block block = blockIn.getBlock();
-
-	        if (block == Blocks.OBSIDIAN)
+/*	        if (block == Blocks.OBSIDIAN)
 	        {
 	            return this.toolMaterial.getHarvestLevel() == 3;
 	        }
@@ -127,7 +119,8 @@ public class UltimateSlimeStaff extends ItemTool{
 	        }
 			return true;}
 			return true;}
-
+*/
+	    }
 
 		 public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		    {
@@ -252,7 +245,8 @@ public class UltimateSlimeStaff extends ItemTool{
 
 	      public float getStrVsBlock(ItemStack stack, Block block) {
 
-	          return effectiveAgainst.contains(block) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, (IBlockState) block);
+	          //return effectiveAgainst.contains(block) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, (IBlockState) block);
+	    	  return 10.0F;
 	      }
 
 /*	      public float getDamageVsEntity()
@@ -266,7 +260,6 @@ public class UltimateSlimeStaff extends ItemTool{
 	      public float getStrVsBlock(ItemStack stack, IBlockState state)
 	      {
 	          Material material = state.getMaterial();
-
 
 	           return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE &&
 	           material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
