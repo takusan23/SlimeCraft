@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "slimecraft:slimesword"
+    },
+    "title": {
+      "translate": "advancements.slimesword.title"
+    },
+    "description": {
+      "translate": "advancements.slimesword.desc"
+    }
+  },
+  "parent": "slimecraft:root",
+  "criteria": {
+    "getSlimeSword":{
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "slimecraft:slimesword"
+          }
+        ]
+      }
+    }
+    }
+}

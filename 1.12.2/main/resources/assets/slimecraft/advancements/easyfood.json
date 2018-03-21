@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "slimecraft:slimecookie"
+    },
+    "title": {
+      "translate": "advancements.slimecookie.title"
+    },
+    "description": {
+      "translate": "advancements.slimecookie.desc"
+    }
+  },
+  "parent": "slimecraft:root",
+  "criteria": {
+    "getSlimeCookie":{
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "slimecraft:slimecookie"
+          }
+        ]
+      }
+    }
+    }
+}

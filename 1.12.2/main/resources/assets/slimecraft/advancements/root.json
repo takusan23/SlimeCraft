@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "slimecraft:slimediamond"
+    },
+    "title": {
+      "translate": "advancements.slimecraft.root.title"
+    },
+    "description": {
+      "translate": "advancements.slimecraft.root.desc"
+    },
+    "background": "slimecraft:textures/blocks/compactslimeblock.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "has_string": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "slimecraft:slimediamond"
+          }
+        ]
+      }
+    }
+    }
+}

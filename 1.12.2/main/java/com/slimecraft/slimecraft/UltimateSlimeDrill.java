@@ -38,40 +38,37 @@ public class UltimateSlimeDrill extends ItemTool {
 		        {
 		            return EnumActionResult.FAIL;
 		        }
-	        else
-	        {
 	            IBlockState iblockstate = worldIn.getBlockState(pos);
 	            Block block = iblockstate.getBlock();
 
 	            //Shiftと右クリックでStaffにする
-		        if(player.isSneaking()) {
-		        	if(block == Blocks.STONE)
+		        	if(block == Blocks.STONE && player.isSneaking())
 		        	{
 		        		itemstack.shrink(1);
 		        		//playerIn.inventory.addItemStackToInventory(new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		player.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
-		        	if(block == Blocks.COBBLESTONE)
+		        	else if(block == Blocks.COBBLESTONE && player.isSneaking())
 		        	{
 		        		itemstack.shrink(1);
 		        		//playerIn.inventory.setInventorySlotContents(0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		player.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
-		        }
-	        	if(block == Blocks.BEDROCK)
-      			{
-	        		player.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
-	        		itemstack.shrink(1);
-      			}
+		        
+//		        	else if(block == Blocks.BEDROCK)
+//	        		{
+//	        			player.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
+//	        			itemstack.shrink(1);
+//	        		}
 
-		        	if(block != Blocks.BEDROCK)
-		        	{
-		        		worldIn.destroyBlock(pos, false);
-		        		TileEntity tileEntity = null;
-		        		block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
-		        	}
-	      }
-		return null;
+			  		else if(block.getBlockHardness(iblockstate, worldIn, pos) != -1.0F)
+	        		{
+	        			worldIn.destroyBlock(pos, false);
+	        			TileEntity tileEntity = null;
+	        			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
+	        		}
+
+        return EnumActionResult.SUCCESS;
 	    }
     @Override
     public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean isHeld) {

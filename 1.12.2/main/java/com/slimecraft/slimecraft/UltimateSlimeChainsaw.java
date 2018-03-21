@@ -37,48 +37,42 @@ public class UltimateSlimeChainsaw extends ItemTool {
 		        {
 		            return EnumActionResult.FAIL;
 		        }
-	        else
-	        {
 	            IBlockState iblockstate = worldIn.getBlockState(pos);
 	            Block block = iblockstate.getBlock();
 
 	            //Shiftと右クリックでStaffにする
-		        if(player.isSneaking()) {
-		        	if(block == Blocks.PLANKS)
+		        	if(block == Blocks.PLANKS && player.isSneaking())
 		        	{
 		        		itemstack.shrink(1);
 		        		//playerIn.inventory.addItemStackToInventory(new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		player.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
-		        	if(block == Blocks.LOG)
+		        	else if(block == Blocks.LOG && player.isSneaking())
 		        	{
 		        		itemstack.shrink(1);
 		        		//playerIn.inventory.setInventorySlotContents(0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		player.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
-		        	if(block == Blocks.LOG2)
+		        	else if(block == Blocks.LOG2 && player.isSneaking())
 		        	{
 		        		itemstack.shrink(1);
 		        		//playerIn.inventory.setInventorySlotContents(0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
 		        		player.setHeldItem(hand, (new ItemStack(SlimeCraftItems.UltimateSlimeStaff)));
 		        	}
-    	        	if(block == Blocks.BEDROCK)
+		        	else if(block == Blocks.BEDROCK && player.isSneaking())
           			{
     	        		player.setHeldItem(hand,new ItemStack(SlimeCraftItems.UltimateSlimeStaff));
     	        		itemstack.shrink(1); 
           			}
 
+			  		else if(block.getBlockHardness(iblockstate, worldIn, pos) != -1.0F)
+	        		{
+	        			worldIn.destroyBlock(pos, false);
+	        			TileEntity tileEntity = null;
+	        			block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
+	        		}
 
-		        }
-
-		        	if(block !=Blocks.BEDROCK)
-		        	{
-		        		worldIn.destroyBlock(pos, false);
-		        		TileEntity tileEntity = null;
-		        		block.harvestBlock(worldIn, player, pos, iblockstate, tileEntity, itemstack);
-		        	}
-	      }
-		return null;
+        return EnumActionResult.SUCCESS;
 	    }
     @Override
     public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean isHeld) {

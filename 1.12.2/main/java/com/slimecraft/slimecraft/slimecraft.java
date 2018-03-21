@@ -32,7 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class slimecraft{
     public static final String MOD_ID = "slimecraft";
     public static final String MOD_NAME = "SlimeCraft";
-    public static final String MOD_VERSION = "1.3";
+    public static final String MOD_VERSION = "2.0";
     public static final String MOD_DEPENDENCIES ="required-after:forge@[1.12-14.21.1.2426,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.12]";
     public static final String CLIENT_PROXY_CLASS = "com.slimecraft.slimecraft.proxy.ClientProxy";

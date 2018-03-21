@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "slimecraft:slimemultitool"
+    },
+    "title": {
+      "translate": "advancements.slimemultitool.title"
+    },
+    "description": {
+      "translate": "advancements.slimemultitool.desc"
+    },
+    "frame": "challenge"
+  },
+  "parent": "slimecraft:slimediamondswordx",
+  "criteria": {
+    "getSlimeMultiTool":{
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "slimecraft:slimemultitool",
+            "item": "slimecraft:slimemultitoolfortune"
+          }
+        ]
+      }
+    }
+    }
+}

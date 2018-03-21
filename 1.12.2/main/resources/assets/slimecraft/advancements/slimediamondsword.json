@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "slimecraft:slimediamondsword"
+    },
+    "title": {
+      "translate": "advancements.slimediamondsword.title"
+    },
+    "description": {
+      "translate": "advancements.slimediamondsword.desc"
+    }
+  },
+  "parent": "slimecraft:slimeironsword",
+  "criteria": {
+    "getSlimeDiamondSword":{
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "slimecraft:slimediamondsword"
+          }
+        ]
+      }
+    }
+    }
+}

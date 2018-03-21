@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "slimecraft:ultimateslimestaff"
+    },
+    "title": {
+      "translate": "advancements.ultimateslimestaff.title"
+    },
+    "description": {
+      "translate": "advancements.ultimateslimestaff.desc"
+    },
+    "frame": "goal"
+  },
+  "parent": "slimecraft:slimemultitool",
+  "criteria": {
+    "getUltimateSlimeStaff":{
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "slimecraft:ultimateslimestaff"
+          }
+        ]
+      }
+      }
+    },
+    "rewards": {
+            "loot": ["minecraft:entities/slime"]
+    }
+}
