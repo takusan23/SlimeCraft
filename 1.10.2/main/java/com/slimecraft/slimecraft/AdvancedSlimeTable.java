@@ -31,6 +31,8 @@ public class AdvancedSlimeTable extends Block {
     private BlockPattern slimebox_village;
     private BlockPattern slimebox;
     private BlockPattern slimespawn;
+    private BlockPattern slimematter;
+    private BlockPattern ultimateball;
     private static final Predicate<IBlockState> ADVANCED = new Predicate<IBlockState>()
     {
         public boolean apply(@Nullable IBlockState p_apply_1_)
@@ -160,8 +162,45 @@ public class AdvancedSlimeTable extends Block {
             worldIn.spawnEntityInWorld(entitySlime);
 
         }
+        
+/*        blockpattern$patternhelper = this.SlimeMatter().match(worldIn, pos);
+        if(blockpattern$patternhelper != null)
+        {
+            for (int k = 0; k < this.SlimeMatter().getPalmLength(); ++k)
+            {
+                for (int l = 0; l < this.SlimeMatter().getThumbLength(); ++l)
+                {
+                    worldIn.setBlockState(blockpattern$patternhelper.translateOffset(k, l, 0).getPos(), Blocks.AIR.getDefaultState(), 2);
+                }
+            }
+            BlockPos blockpos = blockpattern$patternhelper.translateOffset(1, 2, 0).getPos();
+            EntityIronGolem entityirongolem = new EntityIronGolem(worldIn);
+            entityirongolem.setPlayerCreated(true);
+            entityirongolem.setLocationAndAngles((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
+            //worldIn.spawnEntityInWorld(entityirongolem);
+            //worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeBox.getDefaultState(), 2);
+            entityirongolem.dropItem(SlimeCraftItems.SlimeMatter, 4);
+        }
 
-
+        blockpattern$patternhelper = this.UltimateBall().match(worldIn, pos);
+        if(blockpattern$patternhelper != null)
+        {
+            for (int k = 0; k < this.UltimateBall().getPalmLength(); ++k)
+            {
+                for (int l = 0; l < this.UltimateBall().getThumbLength(); ++l)
+                {
+                    worldIn.setBlockState(blockpattern$patternhelper.translateOffset(k, l, 0).getPos(), Blocks.AIR.getDefaultState(), 2);
+                }
+            }
+            BlockPos blockpos = blockpattern$patternhelper.translateOffset(1, 2, 0).getPos();
+            EntityIronGolem entityirongolem = new EntityIronGolem(worldIn);
+            entityirongolem.setPlayerCreated(true);
+            entityirongolem.setLocationAndAngles((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
+            //worldIn.spawnEntityInWorld(entityirongolem);
+            //worldIn.setBlockState(pos, SlimeCraftBlocks.SlimeBox.getDefaultState(), 2);
+            entityirongolem.dropItem(SlimeCraftItems.UltimateSlimeBall, 4);
+        }
+*/
     }
 
 
@@ -216,5 +255,29 @@ public class AdvancedSlimeTable extends Block {
         }
         return this.slimespawn;
     }
+    
+/*    private BlockPattern SlimeMatter()
+    {
+    	if (this.slimematter == null)
+    	{
+    		 this.slimematter = FactoryBlockPattern.start().aisle(new String[]
+    				 {"SSS","S S","SSS"})
+    				 .where('S', BlockWorldState.hasState(BlockStateMatcher.forBlock(SlimeCraftBlocks.UltimateBallBlock)))
+    				 .build();
+    	}
+    	return this.slimematter;
+    }
 
+    private BlockPattern UltimateBall()
+    {
+    	if (this.ultimateball == null)
+    	{
+    		 this.ultimateball = FactoryBlockPattern.start().aisle(new String[]
+    				 {"SSS","S S","SSS"})
+    				 .where('S', BlockWorldState.hasState(BlockStateMatcher.forBlock(SlimeCraftBlocks.SlimeTrophy)))
+    				 .build();
+    	}
+    	return this.ultimateball;
+    }
+*/
 }

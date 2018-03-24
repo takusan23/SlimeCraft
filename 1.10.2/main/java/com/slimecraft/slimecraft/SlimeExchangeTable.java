@@ -74,7 +74,6 @@ public class SlimeExchangeTable extends Block {
     //経験値落ちるよ
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem,EnumFacing side, float hitX, float hitY, float hitZ)
 	{
-		playerIn.addStat(slimecraft.SlimeExchangeTable);
 
          if (heldItem != null && (heldItem.getItem() == Items.GUNPOWDER))
          {

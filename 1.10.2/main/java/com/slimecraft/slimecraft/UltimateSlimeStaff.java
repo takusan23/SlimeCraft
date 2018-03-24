@@ -13,6 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
@@ -28,6 +29,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
+
 public class UltimateSlimeStaff extends ItemTool{
 
 		public UltimateSlimeStaff(ToolMaterial toolMaterial) {
@@ -41,6 +43,8 @@ public class UltimateSlimeStaff extends ItemTool{
 		    return ImmutableSet.of("pickaxe","spade","axe","hoe");
 		}
 
+		//private static Set effectiveAgainst;
+
 		private static Set effectiveAgainst = Sets.newHashSet(new Block[] {
 			    Blocks.GRASS, Blocks.DIRT, Blocks.SAND, Blocks.GRAVEL,Blocks.GLASS,Blocks.REDSTONE_LAMP,Blocks.WEB,
 			    Blocks.SNOW_LAYER, Blocks.SNOW, Blocks.CLAY, Blocks.FARMLAND,
@@ -53,6 +57,7 @@ public class UltimateSlimeStaff extends ItemTool{
 		 public boolean canHarvestBlock(IBlockState blockIn)
 	    {
 			return true;
+	    }
 
 /*	        if (block == Blocks.OBSIDIAN)
 	        {
@@ -120,9 +125,10 @@ public class UltimateSlimeStaff extends ItemTool{
 			return true;}
 			return true;}
 */
-	    }
 
-		 public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+
+		 @SuppressWarnings("incomplete-switch")
+		public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		    {
 
 			 if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
@@ -174,17 +180,19 @@ public class UltimateSlimeStaff extends ItemTool{
 		                //UltimateSlimeBall変換
 		                if (block == SlimeCraftBlocks.SlimeTrophy)
 		                {
-		    	        	playerIn.dropItem(new ItemStack(SlimeCraftItems.UltimateSlimeBall), true);
+		    	        	playerIn.dropItem(new ItemStack(Items.SLIME_BALL), true);
 		    	        	worldIn.destroyBlock(pos, false);
 		    	        	playerIn.addStat(slimecraft.SlimeTrophy_New_usage);
 		                }
-		                //SlimeMatter変換
-		                if (block == SlimeCraftBlocks.SlimeMatterBlock)
+/*		                //SlimeMatter変換
+ 						//削除
+		                if (block == SlimeCraftBlocks.UltimateBallBlock)
 		                {
 		    	        	playerIn.dropItem(new ItemStack(SlimeCraftItems.SlimeMatter), true);
 		    	        	worldIn.destroyBlock(pos, false);
 		    	        	playerIn.addStat(slimecraft.SlimeMatter);
 		                }
+*/
 
 		    	        if(playerIn.isSneaking()) {
 		    	        	if(block == Blocks.STONE)
@@ -234,6 +242,7 @@ public class UltimateSlimeStaff extends ItemTool{
 
 		    	        }
 
+
 		            else
 		         	{
 		        	 return EnumActionResult.PASS;
@@ -263,7 +272,8 @@ public class UltimateSlimeStaff extends ItemTool{
 
 	           return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE &&
 	           material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
-	      }
+
+	    	  }
 
 
 

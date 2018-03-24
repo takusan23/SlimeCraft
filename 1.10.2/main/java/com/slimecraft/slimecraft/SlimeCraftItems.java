@@ -5,7 +5,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
@@ -113,8 +112,8 @@ public class SlimeCraftItems {
 		SlimeMatter = new Item().setUnlocalizedName("Slime Matter").setCreativeTab(slimecraft.SlimeCraftTab);
         AdvancedSlimeTableCard = new AdvancedSlimeTableCard().setMaxDamage(39).setMaxStackSize(1).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Advanced SlimeTable Card");
 		//sword
-		SlimeSword = new ItemSword(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Sword").setMaxDamage(256);
-		SlimeIronSword = new ItemSword(ToolMaterial.IRON).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
+		SlimeSword = new SlimeSword(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Sword").setMaxDamage(256);
+		SlimeIronSword = new SlimeIronSword(ToolMaterial.IRON).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Sword");
 		SlimeDiamondSword = new ItemSword(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Sword");
 		SlimeDiamondSwordX = new SlimeDiamondSwordX(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Sword X");
 		//pickaxe
@@ -133,7 +132,7 @@ public class SlimeCraftItems {
 		SlimeDiamondShovel = new SlimeDiamondShovel(ToolMaterial.DIAMOND).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Shovel").setMaxDamage(4096);
 		SlimeDiamondShovelX  = new SlimeDiamondShovelX(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Shovel X");
 		//hoe
-		SlimeHoe = new ItemHoe(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Hoe");
+		SlimeHoe = new SlimeHoe(ToolMaterial.STONE).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Slime Hoe");
         SlimeIronHoe = new SlimeIronHoe(ToolMaterial.IRON).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeIron Hoe").setMaxDamage(512);
         SlimeDiamondHoe = new SlimeDiamondHoe(ToolMaterial.DIAMOND).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Hoe").setMaxDamage(4096);
         SlimeDiamondHoeX = new SlimeDiamondHoeX(SlimeCraftItems.Dia_SLIME).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeDiamond Hoe X");
@@ -150,16 +149,16 @@ public class SlimeCraftItems {
 //        DrillUpgrade = new DrillUpgrade().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Drill Upgrade");
         //potioncard
         PotionCard = new Item().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Potion Card");
-        SpeedCard = new SpeedCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Speed Card").setMaxStackSize(1);
-        FoodCard = new FoodCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Food Card").setMaxStackSize(1);
-        RegenerationCard = new RegenerationCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Regeneration Card").setMaxStackSize(1);
-        HungerCard = new HungerCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Hunger Card").setMaxStackSize(1);
-        ResistanceCard = new ResistanceCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Resistance Card").setMaxStackSize(1);
-        FireResistanceCard = new FireResistanceCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Fire Resistance Card").setMaxStackSize(1);
-        NightVisionCard = new NightVisionCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Night Vision Card").setMaxStackSize(1);
-        InvisibilityCard = new InvisibilityCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Invisibility Card").setMaxStackSize(1);
-        JumpBoostCard = new JumpBoostCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Jump Boost Card").setMaxStackSize(1);
-        GlowingCard = new GlowingCard().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Glowing Card").setMaxStackSize(1);
+        SpeedCard = new SpeedCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Speed Card").setMaxStackSize(1);
+        FoodCard = new FoodCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Food Card").setMaxStackSize(1);
+        RegenerationCard = new RegenerationCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Regeneration Card").setMaxStackSize(1);
+        HungerCard = new HungerCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Hunger Card").setMaxStackSize(1);
+        ResistanceCard = new ResistanceCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Resistance Card").setMaxStackSize(1);
+        FireResistanceCard = new FireResistanceCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Fire Resistance Card").setMaxStackSize(1);
+        NightVisionCard = new NightVisionCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Night Vision Card").setMaxStackSize(1);
+        InvisibilityCard = new InvisibilityCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Invisibility Card").setMaxStackSize(1);
+        JumpBoostCard = new JumpBoostCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Jump Boost Card").setMaxStackSize(1);
+        GlowingCard = new GlowingCard().setMaxDamage(39).setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("Glowing Card").setMaxStackSize(1);
         //slimemake
         SlimeMakeKit = new Item().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeMakeKit").setContainerItem(Items.GLASS_BOTTLE);
         SlimeMakeKit_2 = new Item().setCreativeTab(slimecraft.SlimeCraftTab).setUnlocalizedName("SlimeMake Material 2");
@@ -232,7 +231,7 @@ public class SlimeCraftItems {
 		registerItem(InvisibilityCard, "invisiblilitycard");
 		registerItem(JumpBoostCard, "jumpboostcard");
 		registerItem(GlowingCard, "glowingcard");
-		registerItem(AdvancedSlimeTableCard, "advancedslimetablecard");
+		//registerItem(AdvancedSlimeTableCard, "advancedslimetablecard");
 		//slimemake
 		registerItem(SlimeMakeKit, "slimemakekit");
 		registerItem(SlimeMakeKit_2, "slimemakekit2");
@@ -263,7 +262,7 @@ public class SlimeCraftItems {
 		registerRender(GlassStick);
 		registerRender(UltimateSlimeBall);
 		registerRender(SlimeMatter);
-		registerRender(AdvancedSlimeTableCard);
+		//registerRender(AdvancedSlimeTableCard);
 		//sword
 		registerRender(SlimeSword);
 		registerRender(SlimeIronSword);
@@ -335,6 +334,5 @@ public class SlimeCraftItems {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 		.register(item, 0, new ModelResourceLocation(item.getRegistryName(),"inventory"));
 	}
-
 
 }

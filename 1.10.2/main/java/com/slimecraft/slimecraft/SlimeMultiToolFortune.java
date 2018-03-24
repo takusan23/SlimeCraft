@@ -127,7 +127,8 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
 		return true;}
 
 
-	 public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	 @SuppressWarnings("incomplete-switch")
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
 	        if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
 	        {
@@ -268,7 +269,7 @@ public SlimeMultiToolFortune(ToolMaterial toolMaterial){
       }
 
 
- 
+
 
 	}
 

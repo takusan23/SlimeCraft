@@ -25,10 +25,10 @@ public class UltimateSlimeDrill extends ItemTool {
 	//super(attackDamageIn, attackSpeedIn, materialIn, effectiveBlocksIn);
 		super(10, 20, SlimeCraftItems.UltimateTool, effectiveAgainst);
 	}
-		//private static Set effectiveAgainst = Sets.newHashSet(new Block[] {
-		//});
-
 		private static Set effectiveAgainst = Sets.newHashSet(new Block[] {
+		});
+
+/*		private static Set effectiveAgainst = Sets.newHashSet(new Block[] {
 			    Blocks.GRASS, Blocks.DIRT, Blocks.SAND, Blocks.GRAVEL,
 			    Blocks.SNOW_LAYER, Blocks.SNOW, Blocks.CLAY, Blocks.FARMLAND,
 			    Blocks.SOUL_SAND, Blocks.MYCELIUM,Blocks.COBBLESTONE,Blocks.STONE,
@@ -36,12 +36,11 @@ public class UltimateSlimeDrill extends ItemTool {
 		        Blocks.PLANKS, Blocks.BOOKSHELF, Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK, Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE,Blocks.CRAFTING_TABLE,
 		        SlimeCraftBlocks.SlimeIronBlock,SlimeCraftBlocks.SlimeDiamondBlock,
 		});
-
+*/
 
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
-
-
+ 
         IBlockState iblockstate = worldIn.getBlockState(pos);
         Block block = iblockstate.getBlock();
 
@@ -81,12 +80,14 @@ public class UltimateSlimeDrill extends ItemTool {
 		  		//岩盤以外のブロックを破壊する
 		  		//setBlockUnbreakableは-1.0Fに設定されている
 		  		else if(block.getBlockHardness(iblockstate, worldIn, pos) != -1.0F)
-		        		{
-		        			worldIn.destroyBlock(pos, false);
-		        			TileEntity tileEntity = null;
-		        			block.harvestBlock(worldIn, playerIn, pos, iblockstate, tileEntity, stack);
-		        		}
-
+        		{
+        			worldIn.destroyBlock(pos, false);
+        			TileEntity tileEntity = null;
+        			block.harvestBlock(worldIn, playerIn, pos, iblockstate, tileEntity, stack);
+        		}
+		  	            		
+		  	        		
+		        		
 	        return EnumActionResult.SUCCESS;
 	    }
     @Override

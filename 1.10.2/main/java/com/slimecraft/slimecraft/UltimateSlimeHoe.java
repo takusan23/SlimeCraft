@@ -39,6 +39,7 @@ public class UltimateSlimeHoe extends ItemTool {
 	        return false;
 	    }
 
+		@SuppressWarnings("incomplete-switch")
 		public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		    {
 

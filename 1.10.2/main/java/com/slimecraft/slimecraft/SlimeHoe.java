@@ -13,11 +13,11 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SlimeIronHoe extends ItemHoe {
-
-	public SlimeIronHoe(ToolMaterial toolMaterial) {
+public class SlimeHoe extends ItemHoe{
+	public SlimeHoe(ToolMaterial toolMaterial) {
 		super(toolMaterial);
 	}
+
 	 @SuppressWarnings("incomplete-switch")
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
@@ -57,6 +57,7 @@ public class SlimeIronHoe extends ItemHoe {
 	                    }
 	                }
 	            }
+
 
          else
       	{

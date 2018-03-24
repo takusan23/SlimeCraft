@@ -31,7 +31,7 @@ public class slimecraft{
 
     public static final String MOD_ID = "slimecraft";
     public static final String MOD_NAME = "SlimeCraft";
-    public static final String MOD_VERSION = "Beta 3.0";
+    public static final String MOD_VERSION = "2.5.0 ポプテピピック最終回";
     public static final String MOD_DEPENDENCIES ="required-after:Forge@[1.10.2-12.18.3.2316-,)";
     public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.10.2]";
     public static final String CLIENT_PROXY_CLASS = "com.slimecraft.slimecraft.proxy.ClientProxy";
@@ -160,10 +160,9 @@ public class slimecraft{
     public static Achievement Low_performance_personal_computer;
     public static Achievement SlimeStaff;
     public static Achievement Range_attack;
-    public static Achievement SlimeCraft_New_Crafting_System;
-    public static Achievement SlimeXpTable;
-    public static Achievement SlimeExchangeTable;
-    public static Achievement SlimeMatter;
+//    public static Achievement SlimeCraft_New_Crafting_System;
+//    public static Achievement SlimeXpTable;
+//    public static Achievement SlimeExchangeTable;
     public static Achievement SlimeTrophy_New_usage;
 
 
@@ -213,16 +212,16 @@ public class slimecraft{
             	SlimeStaff = new Achievement("slimestaff", "SlimeStaff", -5, 0, new ItemStack(SlimeCraftItems.UltimateSlimeStaff), null).registerStat();
             	Range_attack = new Achievement("range_attack", "Range Attack", -3, 0, new ItemStack(SlimeCraftItems.UltimateSlimeBall), SlimeStaff).registerStat();
             	SlimeTrophy_New_usage = new Achievement("slimetrophy_new_usage", "SlimeTrophy New usage", -7, 0, new ItemStack(SlimeCraftBlocks.SlimeTrophy), SlimeStaff).registerStat();
-            	SlimeMatter = new Achievement("slimematter", "Slime Matter", -9, 0, new ItemStack(SlimeCraftItems.SlimeMatter), SlimeTrophy_New_usage).registerStat();
+            	//SlimeMatter = new Achievement("slimematter", "Slime Matter", -9, 0, new ItemStack(SlimeCraftItems.SlimeMatter), SlimeTrophy_New_usage).registerStat();
 
-            	SlimeCraft_New_Crafting_System = new Achievement("slimecraft_newcrafting_system", "SlimeCraft New Crafting System", -5, -4, new ItemStack(SlimeCraftBlocks.SlimeTable), null).registerStat();
-            	SlimeXpTable = new Achievement("slimexptable", "Slime XpTable", -7, -5, new ItemStack(SlimeCraftBlocks.SlimeXpTable), SlimeCraft_New_Crafting_System).registerStat();
-            	SlimeExchangeTable = new Achievement("slimeexchangetable", "Slime ExchangeTable", -3, -5, new ItemStack(SlimeCraftBlocks.SlimeExchangeTable), SlimeCraft_New_Crafting_System).registerStat();
+//            	SlimeCraft_New_Crafting_System = new Achievement("slimecraft_newcrafting_system", "SlimeCraft New Crafting System", -5, -4, new ItemStack(SlimeCraftBlocks.SlimeTable), null).registerStat();
+//            	SlimeXpTable = new Achievement("slimexptable", "Slime XpTable", -7, -5, new ItemStack(SlimeCraftBlocks.SlimeXpTable), SlimeCraft_New_Crafting_System).registerStat();
+//            	SlimeExchangeTable = new Achievement("slimeexchangetable", "Slime ExchangeTable", -3, -5, new ItemStack(SlimeCraftBlocks.SlimeExchangeTable), SlimeCraft_New_Crafting_System).registerStat();
 
             	//実績ページ？上の工程が出来たら最後に１行目の文に,で追加してね
             	SlimeCraft_Achievement = new AchievementPage("SlimeCraft",Welcome_to_SlimeCraft,Slime_Sword,SlimeIron_Sword,SlimeDiamond_Sword,
             			SlimeDiamond_X_Series,SlimeDiamondPickaxe_X,SlimeDiamondShovel_X,Pickaxe_Axe_Shovel_Hoe,MultiTool_Fortune,Welcome_to_ScienceClub
-            			,EasyFood,Low_performance_personal_computer,SlimeStaff,Range_attack,SlimeCraft_New_Crafting_System,SlimeXpTable,SlimeExchangeTable,SlimeMatter,SlimeTrophy_New_usage);
+            			,EasyFood,Low_performance_personal_computer,SlimeStaff,Range_attack,SlimeTrophy_New_usage);
             	//↑です
             	AchievementPage.registerAchievementPage(SlimeCraft_Achievement);
 
@@ -668,8 +667,11 @@ public class slimecraft{
 	   	"SSS","SSS","SSS",'S',SlimeCraftItems.UltimateSlimeBall
 		);
    GameRegistry.addRecipe(new ItemStack(SlimeCraftBlocks.SlimeMatterBlock),
-	   "SSS","SSS","SSS",'S',SlimeCraftBlocks.UltimateBallBlock
+	   "SSS","SSS","SSS",'S',SlimeCraftItems.SlimeMatter
 		);
+   GameRegistry.addShapelessRecipe(new ItemStack(SlimeCraftItems.SlimeMatter,9),
+	   		new ItemStack(SlimeCraftBlocks.SlimeMatterBlock)
+	   	);
    GameRegistry.addSmelting(Items.SLIME_BALL, new ItemStack(SlimeCraftItems.SlimeMakekit_3), 1.0f);
    GameRegistry.addSmelting(SlimeCraftItems.SlimeMakekit_4, new ItemStack(SlimeCraftItems.SlimeMakeKit_2), 1.0f);
 
@@ -684,6 +686,12 @@ public class slimecraft{
 		);
    GameRegistry.addRecipe(new ItemStack(Items.REDSTONE,4),
 		"XXX","XRX","RRR",'R',SlimeCraftItems.SlimeMatter
+		);
+   GameRegistry.addRecipe(new ItemStack(Items.EMERALD),
+		" S ","SDS"," S ",'S',SlimeCraftItems.SlimeMatter,'D',Items.DIAMOND
+		);
+   GameRegistry.addRecipe(new ItemStack(Items.GOLD_INGOT),
+		"   ","SSS","  ",'S',SlimeCraftItems.SlimeMatter
 		);
 
 

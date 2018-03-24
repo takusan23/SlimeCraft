@@ -108,7 +108,7 @@ public class SlimeCraftBlocks {
 		registerBlock(SlimeExchangeTable);
 		registerBlock(UltimateBallBlock);
 		registerBlock(SlimeMatterBlock);
-		registerBlock(AdvancedSlimeTable);
+		//registerBlock(AdvancedSlimeTable);
 		registerBlock(SlimeBox);
 		registerBlock(SlimeBox_Village);
 
@@ -152,7 +152,7 @@ public class SlimeCraftBlocks {
 		regiserRender(SlimeExchangeTable);
 		regiserRender(UltimateBallBlock);
 		regiserRender(SlimeMatterBlock);
-		regiserRender(AdvancedSlimeTable);
+		//regiserRender(AdvancedSlimeTable);
 		regiserRender(SlimeBox);
 		regiserRender(SlimeBox_Village);
 	}
